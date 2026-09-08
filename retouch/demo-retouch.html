@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>情绪影像 · 朋友圈精修 — 免费试修 1 张</title>
+  <meta name="description" content="Free 1-photo retouch trial. Your photos only. PayPal → email delivery. No face-swap." />
+  <style>
+    :root {
+      --bg: #f6f1ea;
+      --ink: #1c1917;
+      --muted: #78716c;
+      --card: #fffdf9;
+      --line: #e7e0d5;
+      --accent: #9a3412;
+      --accent-soft: #ffedd5;
+      --ok: #166534;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #ffedd5 0%, transparent 55%), var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+    .wrap { max-width: 44rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+    .badge {
+      display: inline-block; font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase;
+      background: var(--accent-soft); color: var(--accent); padding: 0.25rem 0.6rem; border-radius: 999px; font-weight: 600;
+    }
+    h1 { font-size: clamp(1.6rem, 4vw, 2.1rem); line-height: 1.25; margin: 0.75rem 0 0.5rem; }
+    .lede { color: var(--muted); margin: 0 0 1.5rem; }
+    .compare {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin: 1.25rem 0 0.5rem;
+    }
+    @media (max-width: 520px) { .compare { grid-template-columns: 1fr; } }
+    .shot {
+      border-radius: 16px; overflow: hidden; border: 1px solid var(--line); background: #ddd;
+      aspect-ratio: 3/4; position: relative;
+    }
+    .shot.before {
+      background:
+        linear-gradient(160deg, #c4b5a5 0%, #a8a29e 40%, #78716c 100%);
+    }
+    .shot.after {
+      background: linear-gradient(160deg, #ffedd5 0%, #fdba74 42%, #fb923c 100%);
+      box-shadow: inset 0 0 60px rgba(255,255,255,0.35);
+    }
+    .shot .label {
+      position: absolute; left: 0.6rem; bottom: 0.6rem;
+      background: rgba(0,0,0,0.55); color: #fff; font-size: 0.75rem;
+      padding: 0.2rem 0.5rem; border-radius: 6px;
+    }
+    .shot .face {
+      position: absolute; inset: 22% 28% 38% 28%;
+      border-radius: 50% 50% 45% 45%; background: rgba(255,255,255,0.25);
+      border: 2px solid rgba(255,255,255,0.35);
+    }
+    .shot.after .face { background: rgba(255,255,255,0.45); filter: saturate(1.1); }
+    .note { font-size: 0.85rem; color: var(--muted); margin: 0 0 1.5rem; }
+    .grid-prices {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin: 1rem 0 1.5rem;
+    }
+    @media (min-width: 640px) { .grid-prices { grid-template-columns: repeat(3, 1fr); } }
+    .price {
+      background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 0.9rem;
+    }
+    .price.featured { border-color: var(--accent); background: #fff7ed; }
+    .price .name { font-size: 0.8rem; color: var(--muted); }
+    .price .amt { font-size: 1.25rem; font-weight: 700; margin: 0.2rem 0; }
+    .price .meta { font-size: 0.8rem; color: var(--muted); }
+    h2 { font-size: 1.15rem; margin: 2rem 0 0.75rem; }
+    ol { padding-left: 1.2rem; }
+    .box {
+      background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+      padding: 1rem 1.1rem; margin: 0.75rem 0;
+    }
+    .auth { font-size: 0.92rem; }
+    .row { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin-top: 0.75rem; }
+    button, .btn {
+      appearance: none; border: 0; cursor: pointer; border-radius: 10px;
+      padding: 0.7rem 1.1rem; font-weight: 600; font-size: 0.95rem;
+      background: var(--ink); color: #fff; text-decoration: none; display: inline-block;
+    }
+    button.secondary, .btn.secondary { background: #fff; color: var(--ink); border: 1px solid var(--line); }
+    code, .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.85rem; background: #f5f5f4; padding: 0.15rem 0.4rem; border-radius: 6px;
+    }
+    .ok { color: var(--ok); font-size: 0.85rem; }
+    footer { margin-top: 2.5rem; font-size: 0.8rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <span class="badge">48h experiment · soft CTA · no spam</span>
+    <h1>朋友圈精修 · 先免费试修 1 张</h1>
+    <p class="lede">只用你自己的照片 · 一句授权 · 不做换脸/擦边 · PayPal 付款后邮箱交片</p>
+
+    <div class="compare" aria-label="示意风格对比">
+      <div class="shot before"><div class="face" aria-hidden="true"></div><span class="label">BEFORE · 示意</span></div>
+      <div class="shot after"><div class="face" aria-hidden="true"></div><span class="label">AFTER · 示意风</span></div>
+    </div>
+    <p class="note">上图为<strong>示意风抽象对比</strong>（非真实客户脸）。有船长/客户授权图后再替换成真前后对比。</p>
+
+    <div class="grid-prices">
+      <div class="price featured">
+        <div class="name">试修（获客）</div>
+        <div class="amt">FREE</div>
+        <div class="meta">1 张 · 前10或每周≤3</div>
+      </div>
+      <div class="price">
+        <div class="name">体验</div>
+        <div class="amt">¥49</div>
+        <div class="meta">2 张 · ≈$7 PayPal</div>
+      </div>
+      <div class="price">
+        <div class="name">轻享月卡</div>
+        <div class="amt">¥198</div>
+        <div class="meta">8 张/月</div>
+      </div>
+      <div class="price featured">
+        <div class="name">常发（主力）</div>
+        <div class="amt">¥328</div>
+        <div class="meta">15 张/月</div>
+      </div>
+      <div class="price">
+        <div class="name">季卡</div>
+        <div class="amt">¥888</div>
+        <div class="meta">45 张 · 老客</div>
+      </div>
+    </div>
+
+    <h2>怎么申请试修</h2>
+    <ol>
+      <li>准备：接收邮箱 + 1 张本人清晰原图 + 风格词（清透/胶片/韩系柔光/高级灰）</li>
+      <li>复制下方授权句，连同原图发到 intake 邮箱（或 X DM）</li>
+      <li>48h 内邮箱收成片；满意再用独立 PayPal 链付体验/月卡</li>
+    </ol>
+
+    <div class="box auth">
+      <strong>授权句（请原样发送）</strong>
+      <p id="auth-text">我确认所提交照片均为本人所有或已获肖像权人书面/明示同意，授权「情绪影像」仅用于本次精修交付，禁止转售与二次商用；我知悉不做未授权换脸及擦边内容。</p>
+      <div class="row">
+        <button type="button" id="copy-auth">复制授权句</button>
+        <a class="btn secondary" id="mailto-trial" href="#">用邮箱申请试修</a>
+        <span class="ok" id="copied" hidden>已复制</span>
+      </div>
+    </div>
+
+    <h2>付费（试修满意后）</h2>
+    <div class="box">
+      <p>体验包付款链接（搞钱操盘代开，勿用 Brief Kit $15）：</p>
+      <p><span class="mono" id="paypal">https://www.paypal.me/AgentBriefKit/7</span></p>
+      <p class="note" style="margin:0">付完请备注：套餐名 + 称呼 + 交付邮箱。成片由 box Gmail 发到你的邮箱。</p>
+      <div class="row">
+        <a class="btn" id="pay-btn" href="https://www.paypal.me/AgentBriefKit/7">PayPal 付体验 $7</a>
+      </div>
+    </div>
+
+    <footer>
+      情绪影像 · moments-retouch demo · intake <span class="mono">chenhui.wu08@gmail.com</span><br />
+      托管后请把本页 URL 写入 EXPERIMENT.md「链接登记」。禁止 spam / 未授权肖像。
+    </footer>
+  </div>
+  <script>
+    (function () {
+      var auth = document.getElementById('auth-text').textContent.trim();
+      var email = 'chenhui.wu08@gmail.com';
+      var subject = encodeURIComponent('[试修申请] 朋友圈精修 1 张');
+      var body = encodeURIComponent(
+        '交付邮箱：\n风格词：\n\n授权句：\n' + auth + '\n\n（请附件 1 张本人原图）\n'
+      );
+      var mail = document.getElementById('mailto-trial');
+      if (email.indexOf('@') !== -1) {
+        mail.href = 'mailto:' + email + '?subject=' + subject + '&body=' + body;
+      } else {
+        mail.href = '#';
+        mail.addEventListener('click', function (e) {
+          e.preventDefault();
+          alert('请复制授权句并邮件至 chenhui.wu08@gmail.com');
+        });
+      }
+      document.getElementById('copy-auth').addEventListener('click', function () {
+        navigator.clipboard.writeText(auth).then(function () {
+          var el = document.getElementById('copied');
+          el.hidden = false;
+          setTimeout(function () { el.hidden = true; }, 1500);
+        });
+      });
+
+    })();
+  </script>
+</body>
+</html>
