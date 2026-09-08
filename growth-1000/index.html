@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>增长材料包审阅 · PixelMaLiang · 3日</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --card: #1a2332;
+      --text: #e7ecf3;
+      --muted: #8b9bb4;
+      --accent: #5b9fd4;
+      --ok: #3dcea7;
+      --warn: #e6b84d;
+      --border: #2a3548;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Noto Sans SC", "Segoe UI", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 24px 16px 80px;
+    }
+    .wrap { max-width: 880px; margin: 0 auto; }
+    h1 { font-size: 1.55rem; margin: 0 0 8px; }
+    h2 { font-size: 1.15rem; margin: 32px 0 12px; border-left: 3px solid var(--accent); padding-left: 10px; }
+    h3 { font-size: 1rem; margin: 0 0 8px; color: var(--accent); }
+    .sub { color: var(--muted); font-size: 0.92rem; margin-bottom: 20px; }
+    .banner {
+      background: linear-gradient(135deg, #1a2332, #243044);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-bottom: 24px;
+    }
+    .banner strong { color: var(--warn); }
+    .grid { display: grid; gap: 12px; }
+    @media (min-width: 640px) {
+      .grid.cols-2 { grid-template-columns: 1fr 1fr; }
+      .grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    a.card, .card {
+      display: block;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color .15s;
+    }
+    a.card:hover { border-color: var(--accent); }
+    .card small { color: var(--muted); display: block; margin-top: 4px; }
+    .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #243044;
+      color: var(--ok);
+      margin-bottom: 6px;
+    }
+    .tag.warn { color: var(--warn); }
+    details {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      padding: 0 14px 12px;
+    }
+    summary {
+      cursor: pointer;
+      padding: 12px 0;
+      font-weight: 600;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::before { content: "▸ "; color: var(--accent); }
+    details[open] summary::before { content: "▾ "; }
+    pre, .copy-box {
+      background: #0c1017;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 0.88rem;
+      white-space: pre-wrap;
+      word-break: break-word;
+      max-height: 280px;
+      overflow: auto;
+      margin: 8px 0;
+      font-family: "SF Mono", "Menlo", "Consolas", monospace;
+    }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 8px 0; }
+    button.copy {
+      background: var(--accent);
+      color: #0c1017;
+      border: none;
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    button.copy:hover { filter: brightness(1.08); }
+    button.copy.done { background: var(--ok); }
+    a.dl {
+      color: var(--accent);
+      font-size: 0.85rem;
+    }
+    footer {
+      margin-top: 40px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+    ul.files { padding-left: 1.1rem; margin: 8px 0; }
+    ul.files li { margin: 4px 0; }
+    ul.files a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>@PixelMaLiang · 3 日增长材料包</h1>
+    <p class="sub">船长审阅页 · GitHub Pages · 相对路径 · 审后发布 · 禁止买粉/刷评/约炮猎奇模仿</p>
+
+    <div class="banner">
+      <strong>诚实预期：</strong>基线约 39 粉 → 3 日 ~1000 为<strong>拉伸目标</strong>。
+      借「旗舰 Article 求传播 + 主页承接 + 短帖/回复喂流量」力学；
+      <strong>不借</strong>约炮题材、不编造大 V 转发、不保证粉量。
+      详见 <a href="PLAN.md" style="color:var(--accent)">PLAN.md §0.5</a>。
+    </div>
+
+    <h2>核心文件</h2>
+    <div class="grid cols-2">
+      <a class="card" href="PLAN.md"><span class="tag">必读</span><strong>PLAN.md</strong><small>诚实预期 · 借/不借 · 节奏 · 硬禁止</small></a>
+      <a class="card" href="profile.md"><span class="tag">承接</span><strong>profile.md</strong><small>Bio ×3 · 置顶 · 高亮</small></a>
+      <a class="card" href="reply-bank.md"><span class="tag">互动</span><strong>reply-bank.md</strong><small>15 条高质量回复模板</small></a>
+      <a class="card" href="DAY1.md"><span class="tag">日程</span><strong>DAY1–3.md</strong><small>小时级发布 + 互动清单</small></a>
+    </div>
+    <ul class="files">
+      <li><a href="DAY1.md">DAY1.md</a> · <a href="DAY2.md">DAY2.md</a> · <a href="DAY3.md">DAY3.md</a></li>
+    </ul>
+
+    <h2>旗舰 &amp; Articles</h2>
+    <div class="grid cols-3">
+      <a class="card" href="articles/article-01.md"><span class="tag warn">旗舰·求传播</span><strong>article-01.md</strong><small>停止向AI许愿 · 金句+清单</small></a>
+      <a class="card" href="articles/article-02.md"><span class="tag">D2</span><strong>article-02.md</strong><small>Stop condition / 省 Token</small></a>
+      <a class="card" href="articles/article-03.md"><span class="tag">D3</span><strong>article-03.md</strong><small>口令合集 + 验收总表</small></a>
+    </div>
+
+    <h2>短帖（21）· 点击展开可复制</h2>
+    <p class="sub">文件在 <code>tweets/</code> · 下列为审阅预览；发前以 txt 为准。</p>
+    <div id="tweets"></div>
+
+    <h2>软漏斗（克制）</h2>
+    <div class="card">
+      站点：<a class="dl" href="https://chener.github.io/pxml-akit-site/" target="_blank" rel="noopener">chener.github.io/pxml-akit-site</a><br />
+      Brief Kit：$15 PayPal · <strong>每天最多 1 条</strong>软 CTA（见 D2-05 / 站点说明）· 热评不刷支付链
+    </div>
+
+    <footer>
+      审阅 URL：<code>https://chener.github.io/pxml-akit-site/growth-1000/</code> · 材料仅供船长审发<br />
+      声音锁：口语、闷骚诙谐、柜台比喻落到具体动作 · 禁说明书腔/鸡汤<br />
+      © 材料仅供船长审发 · Firstmate 备料不自动发
+    </footer>
+  </div>
+
+  <script>
+    const files = [];
+    for (let d = 1; d <= 3; d++) {
+      for (let n = 1; n <= 7; n++) {
+        const id = `D${d}-${String(n).padStart(2, "0")}`;
+        files.push({ id, path: `tweets/${id}.txt` });
+      }
+    }
+    const root = document.getElementById("tweets");
+    files.forEach(({ id, path }) => {
+      const det = document.createElement("details");
+      det.innerHTML = `<summary>${id}.txt <a class="dl" href="${path}" download>下载</a></summary>
+        <div class="row"><button type="button" class="copy" data-target="box-${id}">复制全文</button></div>
+        <div class="copy-box" id="box-${id}">加载中…</div>`;
+      root.appendChild(det);
+      fetch(path).then(r => r.text()).then(t => {
+        document.getElementById(`box-${id}`).textContent = t.trim();
+      }).catch(() => {
+        document.getElementById(`box-${id}`).textContent = "（请用本地服务器或直接打开对应 txt；file:// 下 fetch 可能被拦）\n相对路径：" + path;
+      });
+    });
+    document.addEventListener("click", async (e) => {
+      const btn = e.target.closest("button.copy");
+      if (!btn) return;
+      const el = document.getElementById(btn.dataset.target);
+      try {
+        await navigator.clipboard.writeText(el.textContent);
+        btn.textContent = "已复制";
+        btn.classList.add("done");
+        setTimeout(() => { btn.textContent = "复制全文"; btn.classList.remove("done"); }, 1500);
+      } catch {
+        btn.textContent = "请手动选中复制";
+      }
+    });
+  </script>
+</body>
+</html>
