@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent Brief Kit — Fillable Spec Templates for AI Agents ($15)</title>
+  <meta name="description" content="Turn vague agent asks into paste-ready briefs: goals, constraints, non-goals, acceptance tests. 4 Markdown templates + 5 examples. $15 USD via PayPal. ZIP emailed after payment clears.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://chenerpath.com/">
+  <meta property="og:title" content="Agent Brief Kit — Spec Templates for AI Agents">
+  <meta property="og:description" content="4 fillable Markdown briefs + 5 worked examples. $15 via PayPal. ZIP emailed after payment.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chenerpath.com/">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Agent Brief Kit",
+    "description": "Fillable Markdown brief templates for AI agents: goals, constraints, non-goals, acceptance tests.",
+    "brand": {"@type": "Brand", "name": "Chener Path"},
+    "offers": {
+      "@type": "Offer",
+      "price": "15.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.paypal.me/AgentBriefKit/15"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --card: #ffffff;
+      --text: #1a1a1a;
+      --muted: #5c6570;
+      --line: #e6e8ec;
+      --accent: #1f6feb;
+      --accent-hover: #1858c7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans CJK SC", "PingFang SC", "Hiragino Sans GB",
+        "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 20px 64px;
+    }
+    header h1 {
+      font-size: 1.75rem;
+      margin: 0 0 8px;
+      letter-spacing: -0.02em;
+    }
+    header .sub {
+      color: var(--muted);
+      margin: 0 0 28px;
+      font-size: 1.02rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 22px 24px;
+      margin-bottom: 16px;
+    }
+    .price {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 10px 16px;
+      margin-bottom: 14px;
+    }
+    .price .num {
+      font-size: 1.85rem;
+      font-weight: 700;
+    }
+    .price .note { color: var(--muted); font-size: 0.95rem; }
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #eef5ff;
+      color: var(--accent);
+      border: 1px solid #d3e4ff;
+    }
+    ul { margin: 8px 0 0; padding-left: 1.2em; }
+    li { margin: 6px 0; }
+    h2 {
+      font-size: 1.1rem;
+      margin: 0 0 10px;
+    }
+    .muted { color: var(--muted); font-size: 0.92rem; }
+    .cta {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff !important;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 12px 18px;
+      border-radius: 8px;
+      margin: 6px 8px 6px 0;
+    }
+    .cta:hover { background: var(--accent-hover); }
+    .cta.secondary {
+      background: #fff;
+      color: var(--text) !important;
+      border: 1px solid var(--line);
+    }
+    .cta.secondary:hover { background: #f3f4f6; }
+    .placeholder {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.85rem;
+      background: #fff8e6;
+      border: 1px dashed #e6c76a;
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin-top: 12px;
+      color: #6b5a1e;
+    }
+    .lang-split {
+      display: grid;
+      gap: 12px;
+    }
+    @media (min-width: 640px) {
+      .lang-split { grid-template-columns: 1fr 1fr; }
+    }
+    .lang-box {
+      background: #fafbfc;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+    }
+    .lang-box h3 {
+      margin: 0 0 8px;
+      font-size: 0.95rem;
+    }
+    hr {
+      border: 0;
+      border-top: 1px solid var(--line);
+      margin: 22px 0;
+    }
+    footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    a { color: var(--accent); }
+    .steps { counter-reset: step; list-style: none; padding-left: 0; }
+    .steps li {
+      counter-increment: step;
+      position: relative;
+      padding-left: 2rem;
+      margin: 10px 0;
+    }
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: 50%;
+      background: #eef5ff;
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="badge">Digital ZIP · 数字下载</span>
+      <h1>Agent Brief Kit</h1>
+      <p class="sub">AI 任务说明书模板包 · Scoped Spec Templates for AI Agents</p>
+    </header>
+
+    <section class="card">
+      <div class="price">
+        <span class="num">$15</span>
+        <span class="note">USD · or £ equivalent via UK PayPal</span>
+      </div>
+      <p style="margin-top:0">
+        把「帮我做一个 agent / 自动化一下」写成可粘贴的规格：目标、约束、非目标、验收。
+        Turn vague agent asks into paste-ready briefs: goals, constraints, non-goals, acceptance tests.
+      </p>
+      <p class="muted" style="margin-bottom:0">
+        <strong>付款后邮件发送 ZIP</strong> · ZIP emailed after PayPal payment clears（非自动秒发；通常工作时段内发出）
+      </p>
+      <div style="margin-top:16px">
+        <!-- Live PayPal.Me G&S-facing link · Agent Brief Kit $15 -->
+        <a class="cta" href="https://www.paypal.me/AgentBriefKit/15">Pay with PayPal · 去付款</a>
+        <a class="cta secondary" href="./free-sample/01-one-pager-brief-FREE.pdf">Free sample PDF · 免费样张</a>
+      </div>
+      <p class="muted" style="margin-top:12px;margin-bottom:0">
+        PayPal.Me · $15 USD · Goods &amp; Services preferred · 付款后邮件发 ZIP
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>里面有什么 · What’s inside</h2>
+      <ul>
+        <li>4 可填写 Markdown 模板：一页 Brief / 多 agent 交接 / 变更单 / 验收清单</li>
+        <li>4 fillable templates: one-pager, multi-agent handoff, change-request, acceptance checklist</li>
+        <li>5 填好的范例（内容流水线、线索分流、研究摘要、催票、X 运营）</li>
+        <li>5 worked examples from indie ops workflows</li>
+        <li>中英使用说明 · CN + EN usage notes</li>
+        <li>文件：<code>agent-brief-kit-v1.zip</code></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>怎么买 · How to buy</h2>
+      <ol class="steps">
+        <li>点击上方 PayPal 链接完成 <strong>Goods and Services</strong> 付款（$15 / £ 等价）。Pay via PayPal G&amp;S.</li>
+        <li>付款后发邮件（或私信）告知：邮箱 + PayPal 交易号。Email/DM us your address + transaction ID.</li>
+        <li>我们按 SOP 发送完整 ZIP。We email the ZIP after payment clears.</li>
+      </ol>
+      <p class="muted">请勿使用 Friends &amp; Family 付款购买商品。Please do not use Friends &amp; Family for product purchases.</p>
+    </section>
+
+    <section class="card">
+      <div class="lang-split">
+        <div class="lang-box">
+          <h3>这是 / Is</h3>
+          <p class="muted" style="margin:0">给已经在用 Cursor / Claude / ChatGPT 的人用的<strong>上游规格层</strong>模板包。A practical spec kit for people who already use AI agents.</p>
+        </div>
+        <div class="lang-box">
+          <h3>不是 / Isn’t</h3>
+          <p class="muted" style="margin:0">不是课程、不是「AI 赚钱」承诺、不是口令大全（那是另一款 SKU）。Not a course, income promise, or the 100 harness cards pack.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>退款 · Refunds</h2>
+      <p style="margin:0">
+        文件未送达或 ZIP 损坏：<strong>7 日内</strong>联系补发或退款。<br>
+        成功下载/打开后，不接受「不喜欢内容」退款。<br>
+        <span class="muted">Undelivered or corrupt ZIP: refund/re-send within 7 days. No refund after a successful download/open.</span>
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>情绪类服务 · Emotion services（稍后）</h2>
+      <p class="muted" style="margin:0">
+        精修 / 回忆录等服务：将在本页增加<strong>产品化 intake 表单</strong>之后，才接受 PayPal 定金。当前主售 Brief Kit。<br>
+        Retouch / memoir etc.: PayPal deposit only after a productized intake form is added here. Later — not blocking Brief Kit.
+      </p>
+    </section>
+
+
+    <section class="card" id="faq">
+      <h2>FAQ · 常见问题</h2>
+      <p><strong>What is Agent Brief Kit?</strong><br>
+      A small pack of fillable Markdown templates so you scope AI-agent work before prompting — goals, constraints, non-goals, acceptance checks.</p>
+      <p><strong>Who is it for?</strong><br>
+      People already using Cursor / Claude / ChatGPT who want fewer rework loops. Not a course or “AI income” promise.</p>
+      <p><strong>How do I get the files?</strong><br>
+      Pay $15 via PayPal (Goods &amp; Services preferred). Email us your address + transaction ID; we send <code>agent-brief-kit-v1.zip</code> (usually within business hours).</p>
+      <p><strong>Refunds?</strong><br>
+      Undelivered or corrupt ZIP: within 7 days. No refund after a successful download/open.</p>
+    </section>
+
+
+    <section class="card">
+      <h2>More · 其他示意</h2>
+      <p class="muted" style="margin:0">
+        <a href="./retouch/demo-retouch.html">Moments Retouch demo</a>
+        · <a href="./memoir/demo-memoir.html">Memoir film demo</a>
+        · Pay: Brief <a href="https://www.paypal.me/AgentBriefKit/15">$15</a>
+        / Retouch <a href="https://www.paypal.me/AgentBriefKit/7">$7</a>
+        / Memoir deposit <a href="https://www.paypal.me/AgentBriefKit/105">$105</a>
+      </p>
+    </section>
+
+    <hr>
+    <footer>
+      Agent Brief Kit · closed-loop via existing UK PayPal · no fake testimonials<br>
+      Free sample: <a href="./free-sample/01-one-pager-brief-FREE.pdf">PDF</a>
+      · <a href="./free-sample/01-one-pager-brief-FREE.md">Markdown</a>
+      · Ops: see <code>CLOSED-LOOP.md</code> / <code>DELIVER.md</code>
+    </footer>
+  </div>
+</body>
+</html>

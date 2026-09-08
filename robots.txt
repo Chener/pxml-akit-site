@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://chenerpath.com/sitemap.xml
