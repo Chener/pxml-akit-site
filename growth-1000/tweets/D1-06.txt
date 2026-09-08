@@ -1,0 +1,8 @@
+系列预告｜停止向AI许愿
+
+不是鸡汤合集，是可复制口令卡：
+Refactor / Scaffold / DoD / Stop condition / Constraint / MVP…
+
+每张卡同一结构：场景 → 对比 → 直接粘贴给 AI 的那段 → 一句收束。
+
+关注我，下一条：Stop condition——有终点，才不会跑飞。
