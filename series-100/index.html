@@ -1,0 +1,3642 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>停止向AI许愿 · 100口令（最新盘稿）</title>
+  <meta name="description" content="100 条可直接粘贴的 AI 口令盘稿，供队长审阅与人工 X 发布。">
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://chener.github.io/pxml-akit-site/series-100/">
+  <style>
+    :root {
+      --bg: #f5f6f8;
+      --card: #ffffff;
+      --text: #1a1a1a;
+      --muted: #5c6570;
+      --line: #e6e8ec;
+      --accent: #1f6feb;
+      --accent-soft: #e8f0fe;
+      --sticky: rgba(255,255,255,0.92);
+      --pre-bg: #0f1419;
+      --pre-fg: #e7ecf1;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans CJK SC", "PingFang SC", "Hiragino Sans GB",
+        "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .top {
+      background: linear-gradient(180deg, #fff 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--line);
+      padding: 36px 20px 20px;
+    }
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .top h1 {
+      margin: 0 0 10px;
+      font-size: 1.65rem;
+      letter-spacing: -0.02em;
+    }
+    .note {
+      color: var(--muted);
+      margin: 0 0 18px;
+      font-size: 0.98rem;
+      max-width: 62ch;
+    }
+    .note strong { color: var(--text); font-weight: 600; }
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 12px;
+    }
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: var(--sticky);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      padding: 10px 0;
+    }
+    .sticky-inner {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      max-height: 88px;
+      overflow: auto;
+    }
+    .sticky-nav a {
+      font-size: 0.78rem;
+      font-variant-numeric: tabular-nums;
+      color: var(--muted);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 3px 7px;
+      text-decoration: none;
+    }
+    .sticky-nav a:hover,
+    .sticky-nav a:focus {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      text-decoration: none;
+    }
+    main {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 24px 16px 72px;
+    }
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px 20px 10px;
+      margin-bottom: 28px;
+    }
+    .toc h2 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+    }
+    .toc ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      columns: 2;
+      column-gap: 24px;
+    }
+    @media (max-width: 640px) {
+      .toc ol { columns: 1; }
+    }
+    .toc li {
+      break-inside: avoid;
+      margin: 0 0 8px;
+      font-size: 0.9rem;
+    }
+    .toc a {
+      display: flex;
+      gap: 8px;
+      color: inherit;
+      text-decoration: none;
+    }
+    .toc a:hover .pv { color: var(--accent); text-decoration: underline; }
+    .toc .num {
+      flex: 0 0 auto;
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+      font-weight: 600;
+    }
+    .toc .pv {
+      color: var(--muted);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .post {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px 18px 16px;
+      margin-bottom: 16px;
+      scroll-margin-top: 110px;
+    }
+    .post-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .post-meta {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      min-width: 0;
+    }
+    .badge {
+      flex: 0 0 auto;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      font-size: 0.85rem;
+      border-radius: 8px;
+      padding: 4px 8px;
+      margin-top: 2px;
+    }
+    .post h2 {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .post-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      appearance: none;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #fff;
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+    .btn:hover { filter: brightness(0.95); text-decoration: none; }
+    .btn.ghost {
+      background: transparent;
+      color: var(--accent);
+    }
+    .btn.ok {
+      background: #1a7f37;
+      border-color: #1a7f37;
+    }
+    .body {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Noto Sans Mono CJK SC", monospace;
+      font-size: 0.9rem;
+      line-height: 1.55;
+      background: var(--pre-bg);
+      color: var(--pre-fg);
+      border-radius: 10px;
+      padding: 14px 16px;
+      overflow-x: auto;
+    }
+    footer {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 16px 48px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="wrap">
+      <h1>停止向AI许愿 · 100口令（最新盘稿）</h1>
+      <p class="note">
+        本页为<strong>队长审阅 / 人工 X 发布</strong>用盘稿：全文可一键复制，亦可下载对应 <code>.txt</code>。
+        内容来自本地最新 few-shot 改写稿，可直接粘贴发帖。
+      </p>
+      <div class="meta-row">
+        <span class="pill">共 100 条</span>
+        <span class="pill">粘贴即用</span>
+        <span class="pill"><a href="../">← 返回产品页</a></span>
+      </div>
+    </div>
+  </div>
+
+  <nav class="sticky-nav" aria-label="口令快速跳转">
+    <div class="sticky-inner">
+      <a href="#p001" title="停止向AI许愿 · 1/100">#001</a>
+      <a href="#p002" title="停止向AI许愿 · 2/100">#002</a>
+      <a href="#p003" title="停止向AI许愿 · 3/100">#003</a>
+      <a href="#p004" title="停止向AI许愿 · 4/100">#004</a>
+      <a href="#p005" title="停止向AI许愿 · 5/100">#005</a>
+      <a href="#p006" title="停止向AI许愿 · 6/100">#006</a>
+      <a href="#p007" title="停止向AI许愿 · 7/100">#007</a>
+      <a href="#p008" title="停止向AI许愿 · 8/100">#008</a>
+      <a href="#p009" title="停止向AI许愿 · 9/100">#009</a>
+      <a href="#p010" title="停止向AI许愿 · 10/100">#010</a>
+      <a href="#p011" title="停止向AI许愿 · 11/100">#011</a>
+      <a href="#p012" title="停止向AI许愿 · 12/100">#012</a>
+      <a href="#p013" title="停止向AI许愿 · 13/100">#013</a>
+      <a href="#p014" title="停止向AI许愿 · 14/100">#014</a>
+      <a href="#p015" title="停止向AI许愿 · 15/100">#015</a>
+      <a href="#p016" title="停止向AI许愿 · 16/100">#016</a>
+      <a href="#p017" title="停止向AI许愿 · 17/100">#017</a>
+      <a href="#p018" title="停止向AI许愿 · 18/100">#018</a>
+      <a href="#p019" title="停止向AI许愿 · 19/100">#019</a>
+      <a href="#p020" title="停止向AI许愿 · 20/100">#020</a>
+      <a href="#p021" title="停止向AI许愿 · 21/100">#021</a>
+      <a href="#p022" title="停止向AI许愿 · 22/100">#022</a>
+      <a href="#p023" title="停止向AI许愿 · 23/100">#023</a>
+      <a href="#p024" title="停止向AI许愿 · 24/100">#024</a>
+      <a href="#p025" title="停止向AI许愿 · 25/100">#025</a>
+      <a href="#p026" title="停止向AI许愿 · 26/100">#026</a>
+      <a href="#p027" title="停止向AI许愿 · 27/100">#027</a>
+      <a href="#p028" title="停止向AI许愿 · 28/100">#028</a>
+      <a href="#p029" title="停止向AI许愿 · 29/100">#029</a>
+      <a href="#p030" title="停止向AI许愿 · 30/100">#030</a>
+      <a href="#p031" title="停止向AI许愿 · 31/100">#031</a>
+      <a href="#p032" title="停止向AI许愿 · 32/100">#032</a>
+      <a href="#p033" title="停止向AI许愿 · 33/100">#033</a>
+      <a href="#p034" title="停止向AI许愿 · 34/100">#034</a>
+      <a href="#p035" title="停止向AI许愿 · 35/100">#035</a>
+      <a href="#p036" title="停止向AI许愿 · 36/100">#036</a>
+      <a href="#p037" title="停止向AI许愿 · 37/100">#037</a>
+      <a href="#p038" title="停止向AI许愿 · 38/100">#038</a>
+      <a href="#p039" title="停止向AI许愿 · 39/100">#039</a>
+      <a href="#p040" title="停止向AI许愿 · 40/100">#040</a>
+      <a href="#p041" title="停止向AI许愿 · 41/100">#041</a>
+      <a href="#p042" title="停止向AI许愿 · 42/100">#042</a>
+      <a href="#p043" title="停止向AI许愿 · 43/100">#043</a>
+      <a href="#p044" title="停止向AI许愿 · 44/100">#044</a>
+      <a href="#p045" title="停止向AI许愿 · 45/100">#045</a>
+      <a href="#p046" title="停止向AI许愿 · 46/100">#046</a>
+      <a href="#p047" title="停止向AI许愿 · 47/100">#047</a>
+      <a href="#p048" title="停止向AI许愿 · 48/100">#048</a>
+      <a href="#p049" title="停止向AI许愿 · 49/100">#049</a>
+      <a href="#p050" title="停止向AI许愿 · 50/100">#050</a>
+      <a href="#p051" title="停止向AI许愿 · 51/100">#051</a>
+      <a href="#p052" title="停止向AI许愿 · 52/100">#052</a>
+      <a href="#p053" title="停止向AI许愿 · 53/100">#053</a>
+      <a href="#p054" title="停止向AI许愿 · 54/100">#054</a>
+      <a href="#p055" title="停止向AI许愿 · 55/100">#055</a>
+      <a href="#p056" title="停止向AI许愿 · 56/100">#056</a>
+      <a href="#p057" title="停止向AI许愿 · 57/100">#057</a>
+      <a href="#p058" title="停止向AI许愿 · 58/100">#058</a>
+      <a href="#p059" title="停止向AI许愿 · 59/100">#059</a>
+      <a href="#p060" title="停止向AI许愿 · 60/100">#060</a>
+      <a href="#p061" title="停止向AI许愿 · 61/100">#061</a>
+      <a href="#p062" title="停止向AI许愿 · 62/100">#062</a>
+      <a href="#p063" title="停止向AI许愿 · 63/100">#063</a>
+      <a href="#p064" title="停止向AI许愿 · 64/100">#064</a>
+      <a href="#p065" title="停止向AI许愿 · 65/100">#065</a>
+      <a href="#p066" title="停止向AI许愿 · 66/100">#066</a>
+      <a href="#p067" title="停止向AI许愿 · 67/100">#067</a>
+      <a href="#p068" title="停止向AI许愿 · 68/100">#068</a>
+      <a href="#p069" title="停止向AI许愿 · 69/100">#069</a>
+      <a href="#p070" title="停止向AI许愿 · 70/100">#070</a>
+      <a href="#p071" title="停止向AI许愿 · 71/100">#071</a>
+      <a href="#p072" title="停止向AI许愿 · 72/100">#072</a>
+      <a href="#p073" title="停止向AI许愿 · 73/100">#073</a>
+      <a href="#p074" title="停止向AI许愿 · 74/100">#074</a>
+      <a href="#p075" title="停止向AI许愿 · 75/100">#075</a>
+      <a href="#p076" title="停止向AI许愿 · 76/100">#076</a>
+      <a href="#p077" title="停止向AI许愿 · 77/100">#077</a>
+      <a href="#p078" title="停止向AI许愿 · 78/100">#078</a>
+      <a href="#p079" title="停止向AI许愿 · 79/100">#079</a>
+      <a href="#p080" title="停止向AI许愿 · 80/100">#080</a>
+      <a href="#p081" title="停止向AI许愿 · 81/100">#081</a>
+      <a href="#p082" title="停止向AI许愿 · 82/100">#082</a>
+      <a href="#p083" title="停止向AI许愿 · 83/100">#083</a>
+      <a href="#p084" title="停止向AI许愿 · 84/100">#084</a>
+      <a href="#p085" title="停止向AI许愿 · 85/100">#085</a>
+      <a href="#p086" title="停止向AI许愿 · 86/100">#086</a>
+      <a href="#p087" title="停止向AI许愿 · 87/100">#087</a>
+      <a href="#p088" title="停止向AI许愿 · 88/100">#088</a>
+      <a href="#p089" title="停止向AI许愿 · 89/100">#089</a>
+      <a href="#p090" title="停止向AI许愿 · 90/100">#090</a>
+      <a href="#p091" title="停止向AI许愿 · 91/100">#091</a>
+      <a href="#p092" title="停止向AI许愿 · 92/100">#092</a>
+      <a href="#p093" title="停止向AI许愿 · 93/100">#093</a>
+      <a href="#p094" title="停止向AI许愿 · 94/100">#094</a>
+      <a href="#p095" title="停止向AI许愿 · 95/100">#095</a>
+      <a href="#p096" title="停止向AI许愿 · 96/100">#096</a>
+      <a href="#p097" title="停止向AI许愿 · 97/100">#097</a>
+      <a href="#p098" title="停止向AI许愿 · 98/100">#098</a>
+      <a href="#p099" title="停止向AI许愿 · 99/100">#099</a>
+      <a href="#p100" title="停止向AI许愿 · 100/100">#100</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="toc" id="toc">
+      <h2>目录预览 · 点击跳转</h2>
+      <ol>
+      <li><a href="#p001"><span class="num">#001</span> <span class="pv">对 AI 说「帮我优化一下」= 许愿。</span></a></li>
+      <li><a href="#p002"><span class="num">#002</span> <span class="pv">AI 一改就「顺便」改半个仓库？</span></a></li>
+      <li><a href="#p003"><span class="num">#003</span> <span class="pv">AI 最爱跨文件乱改。</span></a></li>
+      <li><a href="#p004"><span class="num">#004</span> <span class="pv">一上来就堆完整功能，壳都还跑不起来。</span></a></li>
+      <li><a href="#p005"><span class="num">#005</span> <span class="pv">不知道这层抽象有没有用，却不敢拆。</span></a></li>
+      <li><a href="#p006"><span class="num">#006</span> <span class="pv">输入输出没锁死，实现怎么换都像对。</span></a></li>
+      <li><a href="#p007"><span class="num">#007</span> <span class="pv">没写清「什么样算对」，AI 就自编目标。</span></a></li>
+      <li><a href="#p008"><span class="num">#008</span> <span class="pv">「做完了」靠感觉，没有可勾选项。</span></a></li>
+      <li><a href="#p009"><span class="num">#009</span> <span class="pv">AI 说「做完了」，你打开一看：没测、没说明、跑不起来。</span></a></li>
+      <li><a href="#p010"><span class="num">#010</span> <span class="pv">AI 一听需求就加「顺手功能」。</span></a></li>
+      <li><a href="#p011"><span class="num">#011</span> <span class="pv">不说死限制，AI 会选它最爽、你最痛的方案。</span></a></li>
+      <li><a href="#p012"><span class="num">#012</span> <span class="pv">AI 把猜测写成事实，后面全错。</span></a></li>
+      <li><a href="#p013"><span class="num">#013</span> <span class="pv">一上来就做「完整版」，验都验不了。</span></a></li>
+      <li><a href="#p014"><span class="num">#014</span> <span class="pv">不确定行不行，却开始「正式工程」。</span></a></li>
+      <li><a href="#p015"><span class="num">#015</span> <span class="pv">改着改着需求自己长胖了。</span></a></li>
+      <li><a href="#p016"><span class="num">#016</span> <span class="pv">什么都做一点，P0 反而没落地。</span></a></li>
+      <li><a href="#p017"><span class="num">#017</span> <span class="pv">改一处，半个仓库跟着抖。</span></a></li>
+      <li><a href="#p018"><span class="num">#018</span> <span class="pv">UI 里直接查库，业务里拼 HTML——改一次伤一层。</span></a></li>
+      <li><a href="#p019"><span class="num">#019</span> <span class="pv">内部字段到处裸奔，一改全炸。</span></a></li>
+      <li><a href="#p020"><span class="num">#020</span> <span class="pv">显示、计算、存储搅在一起，改显示伤计算。</span></a></li>
+      <li><a href="#p021"><span class="num">#021</span> <span class="pv">一个模块因为五个原因被改——每次合并都惊险。</span></a></li>
+      <li><a href="#p022"><span class="num">#022</span> <span class="pv">实现先写飞了，调用方对不齐。</span></a></li>
+      <li><a href="#p023"><span class="num">#023</span> <span class="pv">数据长什么样没说死，上下游各猜一套。</span></a></li>
+      <li><a href="#p024"><span class="num">#024</span> <span class="pv">跨边界把内部实体整包甩出去，泄漏又难变。</span></a></li>
+      <li><a href="#p025"><span class="num">#025</span> <span class="pv">重试一次，扣款两次——经典翻车。</span></a></li>
+      <li><a href="#p026"><span class="num">#026</span> <span class="pv">失败时有时抛错、有时返回空、有时中文一句话——调用方猜。</span></a></li>
+      <li><a href="#p027"><span class="num">#027</span> <span class="pv">函数说「只返回值」，实际还发了邮件、写了库。</span></a></li>
+      <li><a href="#p028"><span class="num">#028</span> <span class="pv">状态散落在组件、全局、URL、服务器——谁改的说不清。</span></a></li>
+      <li><a href="#p029"><span class="num">#029</span> <span class="pv">对象传来传去被就地改掉，bug 像幽灵。</span></a></li>
+      <li><a href="#p030"><span class="num">#030</span> <span class="pv">同一数据多个「权威」，对不上时谁都像对。</span></a></li>
+      <li><a href="#p031"><span class="num">#031</span> <span class="pv">改表结构时，AI 常只给「新 schema」，不给怎么从旧走到新。</span></a></li>
+      <li><a href="#p032"><span class="num">#032</span> <span class="pv">扣库存写了、订单没落库——半成功比全失败更要命。</span></a></li>
+      <li><a href="#p033"><span class="num">#033</span> <span class="pv">改着改着，余额变负、库存变负——规则被悄悄踩穿。</span></a></li>
+      <li><a href="#p034"><span class="num">#034</span> <span class="pv">「应该不会发生」的分支，线上偏偏发生了——还静默继续。</span></a></li>
+      <li><a href="#p035"><span class="num">#035</span> <span class="pv">AI 一上来就堆异常分支，主流程反而半通不通。</span></a></li>
+      <li><a href="#p036"><span class="num">#036</span> <span class="pv">空字符串、超长输入、临界值——平时能跑，一碰就炸。</span></a></li>
+      <li><a href="#p037"><span class="num">#037</span> <span class="pv">新功能绿了，旧功能灰了——没人再走一遍旧场景。</span></a></li>
+      <li><a href="#p038"><span class="num">#038</span> <span class="pv">测试今天过、明天挂——因为输入数据每次都不一样。</span></a></li>
+      <li><a href="#p039"><span class="num">#039</span> <span class="pv">测自己的逻辑，却被真实支付/短信/第三方拖进泥潭。</span></a></li>
+      <li><a href="#p040"><span class="num">#040</span> <span class="pv">假依赖还「太聪明」，测试结果跟着波动。</span></a></li>
+      <li><a href="#p041"><span class="num">#041</span> <span class="pv">Bug「有时会出现」——没有最小复现，修了也算猜。</span></a></li>
+      <li><a href="#p042"><span class="num">#042</span> <span class="pv">单线程测都绿，一并发就偶发错——典型竞态。</span></a></li>
+      <li><a href="#p043"><span class="num">#043</span> <span class="pv">两个锁互相等，线程全停——日志却像「卡住了」。</span></a></li>
+      <li><a href="#p044"><span class="num">#044</span> <span class="pv">「看起来一步」其实拆成两步，中断就留半成品。</span></a></li>
+      <li><a href="#p045"><span class="num">#045</span> <span class="pv">下游挂了，调用方无限等——线程/连接被拖死。</span></a></li>
+      <li><a href="#p046"><span class="num">#046</span> <span class="pv">失败就再试——没上限就把下游打爆，把自己拖死。</span></a></li>
+      <li><a href="#p047"><span class="num">#047</span> <span class="pv">重试像机关枪，下游刚缓过来又被打趴。</span></a></li>
+      <li><a href="#p048"><span class="num">#048</span> <span class="pv">下游持续 500，你还一直打——雪崩自己制造。</span></a></li>
+      <li><a href="#p049"><span class="num">#049</span> <span class="pv">主路径挂了整页白屏——没有备选结果顶住。</span></a></li>
+      <li><a href="#p050"><span class="num">#050</span> <span class="pv">每个调用都有超时，整条链路还是拖过了用户能等的极限。</span></a></li>
+      <li><a href="#p051"><span class="num">#051</span> <span class="pv">突发流量把自己或下游打穿——没有速率闸门。</span></a></li>
+      <li><a href="#p052"><span class="num">#052</span> <span class="pv">上游狂塞，下游消化不了，队列堆到 OOM。</span></a></li>
+      <li><a href="#p053"><span class="num">#053</span> <span class="pv">用户连点两下，订单两份——重复请求没被挡。</span></a></li>
+      <li><a href="#p054"><span class="num">#054</span> <span class="pv">新版本一上就炸，却找不到「一键退回上一版」的路径。</span></a></li>
+      <li><a href="#p055"><span class="num">#055</span> <span class="pv">代码一合并就全量见光，出问题只能紧急回滚整包。</span></a></li>
+      <li><a href="#p056"><span class="num">#056</span> <span class="pv">一上全量，一炸全站——没有小流量试毒。</span></a></li>
+      <li><a href="#p057"><span class="num">#057</span> <span class="pv">原地升级改到一半失败，环境处于四不像。</span></a></li>
+      <li><a href="#p058"><span class="num">#058</span> <span class="pv">新逻辑想用真实流量练手，又怕影响用户结果。</span></a></li>
+      <li><a href="#p059"><span class="num">#059</span> <span class="pv">字段删了、语义变了，旧客户端集体 500——还没人宣告。</span></a></li>
+      <li><a href="#p060"><span class="num">#060</span> <span class="pv">新版本一发，旧客户端全挂——兼容没列入验收。</span></a></li>
+      <li><a href="#p061"><span class="num">#061</span> <span class="pv">版本号乱跳，调用方不知道是小修还是断崖。</span></a></li>
+      <li><a href="#p062"><span class="num">#062</span> <span class="pv">旧 API 直接删，调用方毫无过渡期。</span></a></li>
+      <li><a href="#p063"><span class="num">#063</span> <span class="pv">「先这样上」之后没人记账，债利息变成灾难。</span></a></li>
+      <li><a href="#p064"><span class="num">#064</span> <span class="pv">AI 动不动「推倒重来」——默认这是高危禁令。</span></a></li>
+      <li><a href="#p065"><span class="num">#065</span> <span class="pv">主逻辑埋在三层 if-else 里，合法路径都看不清。</span></a></li>
+      <li><a href="#p066"><span class="num">#066</span> <span class="pv">「可能还有用」的代码堆成坟场，AI 却不敢或乱删。</span></a></li>
+      <li><a href="#p067"><span class="num">#067</span> <span class="pv">AI 改完甩一坨，你不知道到底动了什么。</span></a></li>
+      <li><a href="#p068"><span class="num">#068</span> <span class="pv">你要的是补丁，它给你整仓重写。</span></a></li>
+      <li><a href="#p069"><span class="num">#069</span> <span class="pv">名义整理，实际改了默认值/文案/顺序——行为漂移。</span></a></li>
+      <li><a href="#p070"><span class="num">#070</span> <span class="pv">任务没锁文件，AI 改着改着就出圈。</span></a></li>
+      <li><a href="#p071"><span class="num">#071</span> <span class="pv">做完了靠感觉——没有可勾选的完成项。</span></a></li>
+      <li><a href="#p072"><span class="num">#072</span> <span class="pv">提示词含糊，AI 就自编目标——事后扯皮。</span></a></li>
+      <li><a href="#p073"><span class="num">#073</span> <span class="pv">AI 说对了，却没有标准答案可对——你只能干瞪眼。</span></a></li>
+      <li><a href="#p074"><span class="num">#074</span> <span class="pv">下一轮 AI/人接不上——上下文缺文件、缺决策、缺坑。</span></a></li>
+      <li><a href="#p075"><span class="num">#075</span> <span class="pv">AI 改个没完，永远「再优化一点」。</span></a></li>
+      <li><a href="#p076"><span class="num">#076</span> <span class="pv">一句话需求，AI 听成整季路线图。</span></a></li>
+      <li><a href="#p077"><span class="num">#077</span> <span class="pv">一次拉十万行，内存和接口一起爆。</span></a></li>
+      <li><a href="#p078"><span class="num">#078</span> <span class="pv">查询全表扫，AI 却建议「先加缓存」绕过根因。</span></a></li>
+      <li><a href="#p079"><span class="num">#079</span> <span class="pv">加了缓存更快，但脏数据挂好久——失效策略没写。</span></a></li>
+      <li><a href="#p080"><span class="num">#080</span> <span class="pv">临时数据/缓存不过期，最后当永久真相用。</span></a></li>
+      <li><a href="#p081"><span class="num">#081</span> <span class="pv">列表 50 条，库被打 50+1 次——循环里查库。</span></a></li>
+      <li><a href="#p082"><span class="num">#082</span> <span class="pv">优化冷门角落，最热那条路径照样慢。</span></a></li>
+      <li><a href="#p083"><span class="num">#083</span> <span class="pv">感觉「到处都慢」，实际卡在一个环节。</span></a></li>
+      <li><a href="#p084"><span class="num">#084</span> <span class="pv">平均很快，但最慢那批用户骂声最大。</span></a></li>
+      <li><a href="#p085"><span class="num">#085</span> <span class="pv">跨服务一慢，谁也不知道慢在哪一跳。</span></a></li>
+      <li><a href="#p086"><span class="num">#086</span> <span class="pv">「感觉挂了」——没有数字，只靠猜。</span></a></li>
+      <li><a href="#p087"><span class="num">#087</span> <span class="pv">接口没问「你是谁」就办事——身份缺口。</span></a></li>
+      <li><a href="#p088"><span class="num">#088</span> <span class="pv">登了录就能干所有事——身份有了，权限没有。</span></a></li>
+      <li><a href="#p089"><span class="num">#089</span> <span class="pv">单测全绿，用户入口到结果仍断——缺端到端。</span></a></li>
+      <li><a href="#p090"><span class="num">#090</span> <span class="pv">只靠鼠标+眼睛能用——键盘和读屏用户进不去。</span></a></li>
+      <li><a href="#p091"><span class="num">#091</span> <span class="pv">线上炸了还在「顺便重构」——缺止血口令。</span></a></li>
+      <li><a href="#p092"><span class="num">#092</span> <span class="pv">同步死等把线程拖垮；异步又没说清何时算完成。</span></a></li>
+      <li><a href="#p093"><span class="num">#093</span> <span class="pv">网络重试导致重复下单——服务端认不出「同一笔」。</span></a></li>
+      <li><a href="#p094"><span class="num">#094</span> <span class="pv">两人同改一行，后写覆盖前写——更新丢失。</span></a></li>
+      <li><a href="#p095"><span class="num">#095</span> <span class="pv">新旧协议只重叠一天，发布窗口变成悬崖。</span></a></li>
+      <li><a href="#p096"><span class="num">#096</span> <span class="pv">改 A 必炸 B——模块绑死，下令时没说清允许依赖谁。</span></a></li>
+      <li><a href="#p097"><span class="num">#097</span> <span class="pv">一个模块又下单又发邮件又算营销——啥都管。</span></a></li>
+      <li><a href="#p098"><span class="num">#098</span> <span class="pv">要 AI 帮你用 Blender，它却只会空谈「氛围」？</span></a></li>
+      <li><a href="#p099"><span class="num">#099</span> <span class="pv">要做小游戏原型，AI 一上来就谈画面管线？</span></a></li>
+      <li><a href="#p100"><span class="num">#100</span> <span class="pv">要设计稿，AI 先画插画不画结构？</span></a></li>
+      </ol>
+    </section>
+
+    <section class="post" id="p001">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#001</span>
+          <h2>停止向AI许愿 · 1/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-001">复制全文</button>
+          <a class="btn ghost" href="posts/001.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-001" class="body">停止向AI许愿 · 1/100
+
+对 AI 说「帮我优化一下」= 许愿。
+改用口令：Refactor（重构）
+
+场景：代码能跑但乱；想变干净，又怕功能被偷偷改掉。
+
+直接复制给 AI：
+「做一次 Refactor：
+- 对外行为/API/输出格式必须不变
+- 禁止借机加功能、改文案、改默认值
+- 只整理结构/命名/重复
+改完输出：文件列表 + 可能回归点 + 我手工验 3 步
+未经确认不要扩大范围。」
+
+优化是愿望；重构是带手铐的清理。
+关注看 2/100 → Minimal change
+</pre>
+    </section>
+
+    <section class="post" id="p002">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#002</span>
+          <h2>停止向AI许愿 · 2/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-002">复制全文</button>
+          <a class="btn ghost" href="posts/002.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-002" class="body">停止向AI许愿 · 2/100
+
+AI 一改就「顺便」改半个仓库？
+口令：Minimal change（最小改动）
+
+场景：你只要修一个点，它开始重构世界观。
+
+直接复制给 AI：
+「目标只做一件事：______。
+Minimal change：最小切口完成；禁止顺手清理；禁止改无关文件。
+先输出：将改哪些文件（≤3）+ 为什么必须改。
+我确认前不要动代码。」
+
+切口越小，翻车面积越小。
+上一条 1/100 · 下一条 3/100 → Boundary
+</pre>
+    </section>
+
+    <section class="post" id="p003">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#003</span>
+          <h2>停止向AI许愿 · 3/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-003">复制全文</button>
+          <a class="btn ghost" href="posts/003.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-003" class="body">停止向AI许愿 · 3/100
+
+AI 最爱跨文件乱改。
+口令：Boundary（边界）——先画线，再动手。
+
+场景：改搜索，登录/订单也被「顺手优化」。
+
+直接复制给 AI：
+「Boundary 锁死：只允许改
+- src/xxx/
+列表外：读可以，写一次算失败。
+先列计划（文件清单+每步验收），确认后再改。」
+
+先画线，再给铲子。
+上一条 2/100 · 下一条 4/100 → Scaffold
+</pre>
+    </section>
+
+    <section class="post" id="p004">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#004</span>
+          <h2>停止向AI许愿 · 4/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-004">复制全文</button>
+          <a class="btn ghost" href="posts/004.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-004" class="body">停止向AI许愿 · 4/100
+
+一上来就堆完整功能，壳都还跑不起来。
+口令：Scaffold（脚手架）——先搭能跑空骨架，再填肉。
+
+场景：你要优惠券列表页，它直接接真接口写满业务。
+例如：空页面+三条假 JSON+占位按钮先跑通。对比 MVP：脚手架是空壳可跑；MVP 是最小真功能。默认 harness 常一口气堆完——口令纠正「先壳后肉」。
+
+直接复制给 AI：
+「Scaffold：先给出空页面 + 假的三条优惠券 JSON + 能点的占位按钮。
+不要接真接口、不要写优惠算法。壳跑通我确认后，再填肉。
+输出：骨架文件列表 + 我怎么点验壳 3 步。」
+
+先立住壳，再填肉。
+上一条 3/100 · 下一条 5/100 → Ablation
+</pre>
+    </section>
+
+    <section class="post" id="p005">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#005</span>
+          <h2>停止向AI许愿 · 5/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-005">复制全文</button>
+          <a class="btn ghost" href="posts/005.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-005" class="body">停止向AI许愿 · 5/100
+
+不知道这层抽象有没有用，却不敢拆。
+口令：Ablation（消融）——拆掉一块再对比，用证据决定留删。
+
+场景：缓存层可疑，你不知道去掉会怎样。
+例如：关 Redis 直打库，对比延迟与正确性。对比 Refactor：重构行为必须不变；消融允许暂时拿掉一块做验证，目的不是乱砍功能。默认凭感觉留着——口令纠正。
+
+直接复制给 AI：
+「Ablation：先关掉______，跑同一组 3 个接口对比有/无。
+禁止同时改业务逻辑。输出对照表 + 留/删建议与理由。」
+
+拔一根管子看水压，再决定。
+上一条 4/100 · 下一条 6/100 → Contract
+</pre>
+    </section>
+
+    <section class="post" id="p006">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#006</span>
+          <h2>停止向AI许愿 · 6/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-006">复制全文</button>
+          <a class="btn ghost" href="posts/006.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-006" class="body">停止向AI许愿 · 6/100
+
+输入输出没锁死，实现怎么换都像对。
+口令：Contract（契约）——先锁成功/失败长什么样。
+
+场景：创建订单，成功失败各返回一坨不一样的东西。
+例如成功 JSON：`{&quot;ok&quot;:true,&quot;orderId&quot;:&quot;…&quot;,&quot;totalCents&quot;:0}`；失败：`{&quot;ok&quot;:false,&quot;error&quot;:&quot;OUT_OF_STOCK&quot;}`。对比 Spec：契约偏机器形状；规格偏人话对错。默认先写代码——口令纠正。
+
+直接复制给 AI：
+「Contract 先锁（禁止先写代码）：
+成功：{ &quot;ok&quot;: true, &quot;orderId&quot;: &quot;string&quot;, &quot;totalCents&quot;: 0 }
+失败：{ &quot;ok&quot;: false, &quot;error&quot;: &quot;OUT_OF_STOCK&quot;|&quot;INVALID_COUPON&quot;|&quot;UNAUTHORIZED&quot; }
+禁止新增字段；确认后再实现。」
+
+有 JSON，才叫契约。
+上一条 5/100 · 下一条 7/100 → Spec
+</pre>
+    </section>
+
+    <section class="post" id="p007">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#007</span>
+          <h2>停止向AI许愿 · 7/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-007">复制全文</button>
+          <a class="btn ghost" href="posts/007.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-007" class="body">停止向AI许愿 · 7/100
+
+没写清「什么样算对」，AI 就自编目标。
+口令：Spec（规格）——先写对错规则，再动手。
+
+场景：优惠券规则口头讲，写出来对不上。
+例如：满100减10仅原价；过期提示「已过期」；非目标不做推荐券。对比 Contract：Spec 是人话规则；Contract 是 JSON 形状。默认直接开写——口令纠正。
+
+直接复制给 AI：
+「先写 Spec（含非目标）再写代码：
+- 做成什么样算对：______
+- 非目标：______
+我确认前不要写代码。」
+
+对题纸先发，再开考。
+上一条 6/100 · 下一条 8/100 → AC
+</pre>
+    </section>
+
+    <section class="post" id="p008">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#008</span>
+          <h2>停止向AI许愿 · 8/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-008">复制全文</button>
+          <a class="btn ghost" href="posts/008.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-008" class="body">停止向AI许愿 · 8/100
+
+「做完了」靠感觉，没有可勾选项。
+口令：AC（验收标准）——可勾选条件定义完成。
+
+场景：忘记密码功能说完成，却说不清验什么。
+例如：`[ ] 有效邮箱10秒内收到信 [ ] 无效邮箱提示格式 [ ] 链接30分钟过期`。对比 Spec：Spec 叙述；AC 是检查表。对比 DoD：AC 偏本功能；DoD 偏出门硬标准。默认感觉完成——口令纠正。
+
+直接复制给 AI：
+「先只产出 AC 勾选清单，我确认后再实现；实现后逐条标通过/未通过。
+禁止用「体验更好」代替勾选。」
+
+勾完才算完。
+上一条 7/100 · 下一条 9/100 → DoD
+</pre>
+    </section>
+
+    <section class="post" id="p009">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#009</span>
+          <h2>停止向AI许愿 · 9/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-009">复制全文</button>
+          <a class="btn ghost" href="posts/009.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-009" class="body">停止向AI许愿 · 9/100
+
+AI 说「做完了」，你打开一看：没测、没说明、跑不起来。
+口令：DoD（完成定义）——出门标准，不是心情。
+
+场景：它把草稿当交付；你要的是硬条件勾完。
+对比 AC（8）：AC 验「这个功能对不对」；DoD 验「能不能交出去」（跑通/有验/有说明）。默认 harness 常以「代码写完」当完成——DoD 纠正这点。
+
+直接复制给 AI：
+「DoD：未满足下列硬条件，禁止声称完成：
+1) 能本地跑通主路径（写明命令）
+2) 有测试或手工验收 3 步
+3) 一页说明：怎么跑 / 已知限制
+输出勾选表；缺一项标未完成并补齐。禁止「基本可用」。」
+
+「做完了」三个字，不如一张勾选表。
+上一条 8/100 · 下一条 10/100 → Non-goal
+</pre>
+    </section>
+
+    <section class="post" id="p010">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#010</span>
+          <h2>停止向AI许愿 · 10/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-010">复制全文</button>
+          <a class="btn ghost" href="posts/010.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-010" class="body">停止向AI许愿 · 10/100
+
+AI 一听需求就加「顺手功能」。
+口令：Non-goal（非目标）——先说这次不做啥。
+
+场景：你要修登录，它顺便重做个人中心。
+例如先写死：不做社交登录 / 不做个人中心改版 / 不做新 UI 库。对比 Constraint（11）：Non-goal 砍「做什么」；Constraint 砍「用什么条件做」。默认模型爱加料——本口令纠正加料。
+
+直接复制给 AI：
+「先写 Non-goal（至少 3 条）再动手：
+- 本次明确不做：______ / ______ / ______
+- 碰到诱惑必须停问我，禁止偷偷做
+目标只保留：______
+输出：非目标列表 → 计划；确认前不改代码。」
+
+不做清单，比愿望清单更能止血。
+上一条 9/100 · 下一条 11/100 → Constraint
+</pre>
+    </section>
+
+    <section class="post" id="p011">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#011</span>
+          <h2>停止向AI许愿 · 11/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-011">复制全文</button>
+          <a class="btn ghost" href="posts/011.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-011" class="body">停止向AI许愿 · 11/100
+
+不说死限制，AI 会选它最爽、你最痛的方案。
+口令：Constraint（约束）
+
+场景：你只要半天能上线，它给你上了新框架。
+例如：时间≤半天；技术栈只允许现有 React+现有 API；禁止新依赖。对比 Non-goal：非目标说「不做支付」；约束说「即便做登录也禁止换框架」。默认常忽略工期——口令纠正。
+
+直接复制给 AI：
+「Constraint 先钉死再设计：
+- 时间：______（超时砍范围，不砍质量）
+- 技术栈：只允许 ______；新依赖必须我批准
+- 性能/体积：______
+违反任一约束的方案作废。先列 2 个合规方案对比，我选后再写代码。」
+
+手铐先戴上，方案才靠谱。
+上一条 10/100 · 下一条 12/100 → Assumption
+</pre>
+    </section>
+
+    <section class="post" id="p012">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#012</span>
+          <h2>停止向AI许愿 · 12/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-012">复制全文</button>
+          <a class="btn ghost" href="posts/012.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-012" class="body">停止向AI许愿 · 12/100
+
+AI 把猜测写成事实，后面全错。
+口令：Assumption（假设）——未证实的先标黄。
+
+场景：它默认「用户一定登录」，游客路径炸了。
+例如假设表一行：`用户已登录 | 证据：无 | 若错：游客 500`。对比 Spec：Spec 写「做成什么样算对」；Assumption 写「我以为世界怎样」。默认模型爱把猜测当事实——口令纠正。
+
+直接复制给 AI：
+「列出 Assumption，每条：内容 / 证据有无 / 若错误的影响。
+禁止把「待确认」当既定事实写进实现。
+我确认前：只输出假设表 + 最小验证步骤，不动业务代码。」
+
+假设不亮灯，翻车在暗处。
+上一条 11/100 · 下一条 13/100 → MVP
+</pre>
+    </section>
+
+    <section class="post" id="p013">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#013</span>
+          <h2>停止向AI许愿 · 13/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-013">复制全文</button>
+          <a class="btn ghost" href="posts/013.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-013" class="body">停止向AI许愿 · 13/100
+
+一上来就做「完整版」，验都验不了。
+口令：MVP（最小可用）——先交付能验证核心价值的最小版。
+
+场景：你要验证「用户会不会用优惠券」，它先做了券推荐引擎。
+例如 MVP：用户能领一张固定满减券并下单成功；非目标：推荐、叠加、分享。对比 Spike：Spike 是扔的实验；MVP 是可给真人用的最小真功能。默认爱做大——口令纠正。
+
+直接复制给 AI：
+「MVP 只保留核心验证：______
+必须能：______（1条用户可完成的路径）
+Non-goal 至少 3 条。先实现 MVP，禁止搭未来架构。
+输出：MVP 范围 + 验收 3 步；确认前不写非目标功能。」
+
+能验证的最小，才叫起步。
+上一条 12/100 · 下一条 14/100 → Spike
+</pre>
+    </section>
+
+    <section class="post" id="p014">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#014</span>
+          <h2>停止向AI许愿 · 14/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-014">复制全文</button>
+          <a class="btn ghost" href="posts/014.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-014" class="body">停止向AI许愿 · 14/100
+
+不确定行不行，却开始「正式工程」。
+口令：Spike（试探）——短时探针，不当交付。
+
+场景：不知第三方短信 API 稳不稳，它直接写进主流程并清理目录。
+例如：2 小时 Spike，只写 `tmp/spike-sms/`，结论：可行/不可行+证据；代码可扔。对比 MVP：MVP 要留；Spike 默认扔。默认 harness 把实验当正式——口令纠正。
+
+直接复制给 AI：
+「Spike（≤______小时）只验证：______
+规则：隔离目录；禁止改生产路径；结束输出结论+证据+建议（留/弃）。
+实验代码标「可删除」，未经我批准不得并入主分支。」
+
+试探是探针，不是新地基。
+上一条 13/100 · 下一条 15/100 → Scope creep
+</pre>
+    </section>
+
+    <section class="post" id="p015">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#015</span>
+          <h2>停止向AI许愿 · 15/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-015">复制全文</button>
+          <a class="btn ghost" href="posts/015.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-015" class="body">停止向AI许愿 · 15/100
+
+改着改着需求自己长胖了。
+口令：Scope creep（范围蔓延）——改需求必须单独开口。
+
+场景：修文案变成「顺便」重做整个设置页。
+例如当前范围一句话：`只改设置页「保存成功」文案`；扩大必须另提案。对比 Minimal change：最小改动限刀口；范围蔓延管「需求是不是还在原单」。默认爱混进新需求——口令纠正。
+
+直接复制给 AI：
+「当前任务范围一句话：______
+若有新需求：1)停手 2)写 Scope change 提案（新增/影响/是否必须）3)我回复「批准扩大」前禁止混进。
+diff 标注：范围内/范围外（范围外必须为空）。」
+
+新需求可以有；混进旧任务不行。
+上一条 14/100 · 下一条 16/100 → Priority
+</pre>
+    </section>
+
+    <section class="post" id="p016">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#016</span>
+          <h2>停止向AI许愿 · 16/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-016">复制全文</button>
+          <a class="btn ghost" href="posts/016.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-016" class="body">停止向AI许愿 · 16/100
+
+什么都做一点，P0 反而没落地。
+口令：Priority（优先级）——先 P0。
+
+场景：登录炸了，它在优化设置页动画。
+例如：P0=登录 500 修复；P1=文案；P2=动画。未勾完 P0 禁止做 P2。对比 Scope creep：蔓延防「变多」；优先级防「顺序乱」。默认平均用力——口令纠正。
+
+直接复制给 AI：
+「把待办分成 P0/P1/P2（各至少写清一条）。
+只允许先做 P0；P0 验收通过前禁止动 P1/P2。
+输出：分级表 + 当前只做的 P0 计划；确认后再改代码。」
+
+先灭火，再抛光。
+上一条 15/100 · 下一条 17/100 → Module
+</pre>
+    </section>
+
+    <section class="post" id="p017">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#017</span>
+          <h2>停止向AI许愿 · 17/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-017">复制全文</button>
+          <a class="btn ghost" href="posts/017.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-017" class="body">停止向AI许愿 · 17/100
+
+改一处，半个仓库跟着抖。
+口令：Module（模块）——按职责切开再动刀。
+
+场景：改计价，下单、优惠、日志全被缠在一个文件。
+例如模块边界：`pricing/` 只负责算价；下单编排不准内嵌公式。对比 Boundary：Boundary 锁路径白名单；Module 锁职责该谁管。默认一文件堆全世界——口令纠正。
+
+直接复制给 AI：
+「Module：先画出本次涉及模块（名+职责一句话）。
+只改模块 ______；跨模块调用必须走公开接口。
+禁止把无关职责粘进该模块。输出：模块图 + 改动文件清单（确认前不改）。」
+
+职责切开，误伤才小。
+上一条 16/100 · 下一条 18/100 → Layer
+</pre>
+    </section>
+
+    <section class="post" id="p018">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#018</span>
+          <h2>停止向AI许愿 · 18/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-018">复制全文</button>
+          <a class="btn ghost" href="posts/018.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-018" class="body">停止向AI许愿 · 18/100
+
+UI 里直接查库，业务里拼 HTML——改一次伤一层。
+口令：Layer（分层）
+
+场景：改显示文案，结果把计价逻辑改坏。
+例如三层：UI 只展示；domain 算价；data 读写。对比 SoC：SoC 分「关注点」；Layer 分「上下游不得跨层直调」。默认图省事跨层——口令纠正。
+
+直接复制给 AI：
+「Layer：本次改动标明所在层（UI/业务/数据）。
+禁止跨层直调（UI→数据库）。需要协作：经下一层公开接口。
+输出：分层说明 + 文件归属；确认后改。」
+
+分层不是仪式，是防串改。
+上一条 17/100 · 下一条 19/100 → Encapsulation
+</pre>
+    </section>
+
+    <section class="post" id="p019">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#019</span>
+          <h2>停止向AI许愿 · 19/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-019">复制全文</button>
+          <a class="btn ghost" href="posts/019.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-019" class="body">停止向AI许愿 · 19/100
+
+内部字段到处裸奔，一改全炸。
+口令：Encapsulation（封装）——藏细节，只露稳定用法。
+
+场景：三个调用方直接摸 `_cacheMap`，你一重构全红。
+例如公开 API：`getPrice(userId)`；禁止外部读 `_cacheMap`。对比 Interface：Interface 先定方法名；Encapsulation 管「内部别被摸」。默认图省事外泄字段——口令纠正。
+
+直接复制给 AI：
+「Encapsulation：
+- 对外只保留稳定 API：______
+- 内部结构禁止外部直接读写
+- 把直访改成走公开 API；行为不变
+禁止扩大公开面图省事。输出：API 清单 + 已消除泄漏点。」
+
+能藏住的细节，才叫接口。
+上一条 18/100 · 下一条 20/100 → SoC
+</pre>
+    </section>
+
+    <section class="post" id="p020">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#020</span>
+          <h2>停止向AI许愿 · 20/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-020">复制全文</button>
+          <a class="btn ghost" href="posts/020.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-020" class="body">停止向AI许愿 · 20/100
+
+显示、计算、存储搅在一起，改显示伤计算。
+口令：SoC（关注点分离）
+
+场景：一个函数里又拼文案又算折扣又写文件。
+例如拆开：`formatPrice` / `calcDiscount` / `saveOrder`。对比 SRP：SRP 强调「一个原因才改」；SoC 强调「不同关切别糊一坨」。默认生成爱写大函数——口令纠正。
+
+直接复制给 AI：
+「SoC：把 ______ 按关注点拆开（显示/计算/存储）。
+每个函数只干一类事；禁止在计算里写文案、在显示里写库。
+行为对外不变。输出：拆分列表 + 怎么验旧行为 3 步。」
+
+搅在一起的，改哪里都疼。
+上一条 19/100 · 下一条 21/100 → SRP
+</pre>
+    </section>
+
+    <section class="post" id="p021">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#021</span>
+          <h2>停止向AI许愿 · 21/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-021">复制全文</button>
+          <a class="btn ghost" href="posts/021.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-021" class="body">停止向AI许愿 · 21/100
+
+一个模块因为五个原因被改——每次合并都惊险。
+口令：SRP（单一职责）
+
+场景：`UserManager` 又管登录又管发邮件又管报表。
+例如：登录留 `Auth`；邮件拆 `Mailer`；报表拆 `Report`。对比 Module：Module 画边界；SRP 检查「会不会因无关理由被迫改」。默认爱建上帝类——口令纠正。
+
+直接复制给 AI：
+「SRP：指出 ______ 现在因哪些原因会改（列≥2）。
+按单一职责拆；每次拆分对外行为不变。
+禁止借机加功能。输出：原因列表 + 拆分方案；确认后再动。」
+
+一个原因才改它，合并才不抖。
+上一条 20/100 · 下一条 22/100 → Interface
+</pre>
+    </section>
+
+    <section class="post" id="p022">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#022</span>
+          <h2>停止向AI许愿 · 22/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-022">复制全文</button>
+          <a class="btn ghost" href="posts/022.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-022" class="body">停止向AI许愿 · 22/100
+
+实现先写飞了，调用方对不齐。
+口令：Interface（接口）——先定能调用的方法，再写肉。
+
+场景：你要「可替换支付」，它直接写死某一家 SDK。
+例如先锁：`charge(orderId)-&gt;{ok,txId}|{ok:false,error}`。对比 Contract：Contract 锁数据形状；Interface 锁可调用方法。默认先写实现——口令纠正「先壳方法」。
+
+直接复制给 AI：
+「Interface 先定：方法名/参数/返回/失败（可写成函数签名或 TypeScript interface）。
+我确认前禁止写具体厂商实现。确认后只准有一个适配器实现该接口。」
+
+先定插座，再买电器。
+上一条 21/100 · 下一条 23/100 → Schema
+</pre>
+    </section>
+
+    <section class="post" id="p023">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#023</span>
+          <h2>停止向AI许愿 · 23/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-023">复制全文</button>
+          <a class="btn ghost" href="posts/023.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-023" class="body">停止向AI许愿 · 23/100
+
+数据长什么样没说死，上下游各猜一套。
+口令：Schema（模式）——缺了谁算非法，先写死。
+
+场景：前端传 `price`，后端要 `priceCents`，AI 两边各写各的。
+例如：`{ &quot;sku&quot;: string, &quot;qty&quot;: int≥1, &quot;priceCents&quot;: int }`；缺字段拒收。对比 Contract：Contract 含成功/失败形态；Schema 专注数据结构合法性。默认自由字段——口令纠正。
+
+直接复制给 AI：
+「先写 Schema（字段名/类型/必填/非法时：拒收|默认|报错）。
+给 1 个合法 JSON + 1 个非法 JSON。
+我确认前不要写解析业务；确认后按 Schema 校验。」
+
+字段表先落地，联调少吵架。
+上一条 22/100 · 下一条 24/100 → DTO
+</pre>
+    </section>
+
+    <section class="post" id="p024">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#024</span>
+          <h2>停止向AI许愿 · 24/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-024">复制全文</button>
+          <a class="btn ghost" href="posts/024.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-024" class="body">停止向AI许愿 · 24/100
+
+跨边界把内部实体整包甩出去，泄漏又难变。
+口令：DTO（数据传输对象）
+
+场景：API 直接返回数据库 User 行，含密码哈希字段名。
+例如 DTO：`{ id, displayName, avatarUrl }`；禁止出现 `passwordHash`。对比 Schema：Schema 定形状规则；DTO 定「跨边界只带需要的字段」。默认直接吐实体——口令纠正。
+
+直接复制给 AI：
+「为 ______ 定义 DTO（只列需要暴露的字段）。
+映射：内部实体 → DTO；禁止把内部字段原样外传。
+输出：DTO JSON 例 + 禁止字段列表；确认后再改接口。」
+
+出门只带证件，别把保险柜抬走。
+上一条 23/100 · 下一条 25/100 → Idempotent
+</pre>
+    </section>
+
+    <section class="post" id="p025">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#025</span>
+          <h2>停止向AI许愿 · 25/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-025">复制全文</button>
+          <a class="btn ghost" href="posts/025.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-025" class="body">停止向AI许愿 · 25/100
+
+重试一次，扣款两次——经典翻车。
+口令：Idempotent（幂等）
+
+场景：网络抖动客户端重放，后端当新请求又扣一次。
+例如：用 `Idempotency-Key` 去重；同一 key 返回同一 `txId`，不二次扣款。对比 Error contract：错误约定说失败怎么返回；幂等说重试别产生新副作用。默认按「新请求」处理——口令纠正。
+
+直接复制给 AI：
+「把 ______ 做成 Idempotent：
+- 1 次与 N 次业务结果相同
+- 去重键是什么（或为何天然幂等）
+- 重放返回与首次成功等价结果，禁止重复副作用
+给出设计 + 重放测试 3 步。禁止「差不多幂等」。」
+
+能安全重试，才叫稳。
+上一条 24/100 · 下一条 26/100 → Error contract
+</pre>
+    </section>
+
+    <section class="post" id="p026">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#026</span>
+          <h2>停止向AI许愿 · 26/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-026">复制全文</button>
+          <a class="btn ghost" href="posts/026.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-026" class="body">停止向AI许愿 · 26/100
+
+失败时有时抛错、有时返回空、有时中文一句话——调用方猜。
+口令：Error contract（错误约定）
+
+场景：库存不足，有时 500，有时 `{error:&quot;没了&quot;}`。
+例如固定：`{ ok:false, error:&quot;OUT_OF_STOCK&quot;|&quot;UNAUTHORIZED&quot;, retryable:false }`。对比 Contract：总契约含成功态；Error contract 专锁失败态。默认自由发挥错误——口令纠正。
+
+直接复制给 AI：
+「先写 Error contract：错误码枚举 / 是否可重试 / 用户可见文案是否允许自由句（默认否）。
+给 2 个失败 JSON 例。确认前不要改业务；确认后所有失败走约定。」
+
+失败也是接口，不是情绪。
+上一条 25/100 · 下一条 27/100 → Side effect
+</pre>
+    </section>
+
+    <section class="post" id="p027">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#027</span>
+          <h2>停止向AI许愿 · 27/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-027">复制全文</button>
+          <a class="btn ghost" href="posts/027.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-027" class="body">停止向AI许愿 · 27/100
+
+函数说「只返回值」，实际还发了邮件、写了库。
+口令：Side effect（副作用）——除返回值外还会改什么，必须先声明。
+
+场景：`calcTax()` 里悄悄写日志到远端，测试变慢且偶发失败。
+例如声明：写 DB orders 行；发邮件；打第三方。对比 State：State 问状态在哪；Side effect 问「这次调用改了外界什么」。默认隐瞒副作用——口令纠正。
+
+直接复制给 AI：
+「列出 ______ 的 Side effect（无则写「无」）。
+禁止未声明的写库/发网/改全局。
+能纯算的保持纯；必须有副作用的集中到明确函数。输出：副作用表；确认后再改。」
+
+有副作用不可怕，可怕的是藏着。
+上一条 26/100 · 下一条 28/100 → State
+</pre>
+    </section>
+
+    <section class="post" id="p028">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#028</span>
+          <h2>停止向AI许愿 · 28/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-028">复制全文</button>
+          <a class="btn ghost" href="posts/028.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-028" class="body">停止向AI许愿 · 28/100
+
+状态散落在组件、全局、URL、服务器——谁改的说不清。
+口令：State（状态）——存在哪、谁能改，先说清。
+
+场景：购物车数量 UI 与服务器不一致，AI 两边各改各的。
+例如 SSOT 指向服务器 cart；UI 只镜像。对比 SSOT：SSOT 定权威源；State 先盘点「现在有哪些副本」。默认多处各改——口令纠正。
+
+直接复制给 AI：
+「先画 State 表：状态名 / 存放位置 / 谁可读 / 谁可写。
+指出权威源；禁止无同步地双写。
+输出状态表 + 收敛计划；确认前不改功能。」
+
+先找齐副本，再谈一致。
+上一条 27/100 · 下一条 29/100 → Immutable
+</pre>
+    </section>
+
+    <section class="post" id="p029">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#029</span>
+          <h2>停止向AI许愿 · 29/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-029">复制全文</button>
+          <a class="btn ghost" href="posts/029.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-029" class="body">停止向AI许愿 · 29/100
+
+对象传来传去被就地改掉，bug 像幽灵。
+口令：Immutable（不可变）——创建后不改，靠新值前进。
+
+场景：折扣函数改了传入的 order 对象，上游总数错乱。
+例如：`applyDiscount(order) -&gt; newOrder`，禁止 `order.total = …`。对比 State：State 管放哪；Immutable 管「改要用新值」。默认就地修改——口令纠正。
+
+直接复制给 AI：
+「把 ______ 改为 Immutable 风格：输入不改；返回新值。
+列出原先就地修改点并消除。输出：改前改后对比 + 回归 3 步。」
+
+少就地改，少幽灵 bug。
+上一条 28/100 · 下一条 30/100 → SSOT
+</pre>
+    </section>
+
+    <section class="post" id="p030">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#030</span>
+          <h2>停止向AI许愿 · 30/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-030">复制全文</button>
+          <a class="btn ghost" href="posts/030.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-030" class="body">停止向AI许愿 · 30/100
+
+同一数据多个「权威」，对不上时谁都像对。
+口令：SSOT（单一事实来源）
+
+场景：用户昵称在资料页、订单页、缓存各存一份，改一处漏两处。
+例如：权威源=`users.display_name`；其它只读投影。对比 State：State 盘点副本；SSOT 指定唯一可写源。默认多源可写——口令纠正。
+
+直接复制给 AI：
+「为 ______ 指定 SSOT（唯一可写源）。
+其它位置改为派生/只读；写路径只准打到 SSOT。
+输出：SSOT 声明 + 迁移步骤；确认后再改。」
+
+真相只认一个地址。
+上一条 29/100 · 下一条 31/100 → Migration
+</pre>
+    </section>
+
+    <section class="post" id="p031">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#031</span>
+          <h2>停止向AI许愿 · 31/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-031">复制全文</button>
+          <a class="btn ghost" href="posts/031.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-031" class="body">停止向AI许愿 · 31/100
+
+改表结构时，AI 常只给「新 schema」，不给怎么从旧走到新。
+口令：Migration（迁移）
+
+场景：线上库要升级字段/表，必须能执行、能回退，不能赌一把。
+例如：users 表加 email_verified；up 加列+回填；down 删列。对比 Schema：Schema 定目标形状；Migration 定怎么从旧走到新且可回退。默认只丢新结构——口令纠正。
+
+直接复制给 AI：
+「做一次 Migration：______（旧结构 → 新结构）。
+步骤必须可执行：up 脚本 + down/回退脚本。
+禁止只改代码不改数据路径；禁止不可逆删列除非我确认。
+先输出：迁移步骤表（顺序/风险/回退）+ 我怎么在预发验 3 步。
+确认前不要动生产库。」
+
+能前进，也要能退回。
+上一条 30/100 · 下一条 32/100 → Transaction
+</pre>
+    </section>
+
+    <section class="post" id="p032">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#032</span>
+          <h2>停止向AI许愿 · 32/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-032">复制全文</button>
+          <a class="btn ghost" href="posts/032.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-032" class="body">停止向AI许愿 · 32/100
+
+扣库存写了、订单没落库——半成功比全失败更要命。
+口令：Transaction（事务）
+
+场景：一组写操作必须同成同败，AI 却拆成多个「看起来成功」的调用。
+例如：扣库存+写订单同一事务；失败全回滚。对比 Side effect：事务管同成同败；副作用声明管「还会改什么」。默认拆成多次「成功」——口令纠正。
+
+直接复制给 AI：
+「把______包进 Transaction：
+- 成功：全部提交
+- 失败：全部回滚，不允许半成功
+列出：参与的写操作、失败时的回滚点、超时怎么办。
+禁止在事务里做不可回滚的外部副作用（发邮件/调三方）除非我批准。
+改完给出：边界说明 + 我怎么人为制造失败验回滚 3 步。」
+
+要么全成，要么当没发生。
+上一条 31/100 · 下一条 33/100 → Invariant
+</pre>
+    </section>
+
+    <section class="post" id="p033">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#033</span>
+          <h2>停止向AI许愿 · 33/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-033">复制全文</button>
+          <a class="btn ghost" href="posts/033.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-033" class="body">停止向AI许愿 · 33/100
+
+改着改着，余额变负、库存变负——规则被悄悄踩穿。
+口令：Invariant（不变量）
+
+场景：系统怎么变，有些规则必须永远成立；先钉死再动刀。
+例如不变量：订单 totalCents ≥ 0 且等于明细之和。对比 Assertion：Invariant 是始终成立的规则；Assertion 是检查点。默认改着改着踩破——口令纠正。
+
+直接复制给 AI：
+「先列出本次相关 Invariant（至少 3 条），例如：______ 必须始终为真。
+改代码时这些规则当验收锚点：一破即失败。
+禁止用「暂时先这样」绕过不变量。
+输出：不变量清单 + 每条对应断言/检查位置 + 我怎么手工打破试图验 3 步。」
+
+规则先于实现；锚点先于改动。
+上一条 32/100 · 下一条 34/100 → Assertion
+</pre>
+    </section>
+
+    <section class="post" id="p034">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#034</span>
+          <h2>停止向AI许愿 · 34/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-034">复制全文</button>
+          <a class="btn ghost" href="posts/034.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-034" class="body">停止向AI许愿 · 34/100
+
+「应该不会发生」的分支，线上偏偏发生了——还静默继续。
+口令：Assertion（断言）
+
+场景：必须为真的前提要用断言钉死，破了立刻失败，别吞掉。
+例如：扣款前 `assert userId != null`；失败立即中断。对比 Invariant：不变量是规则；断言是卡住的钉子。默认空 catch 吞掉——口令纠正。
+
+直接复制给 AI：
+「在______关键路径加 Assertion：
+- 写清前置条件/后置条件（必须为真）
+- 失败时立即中断并给出可读信息
+禁止用空 catch 吞断言；禁止把断言当普通业务校验糊弄用户。
+改完列出：断言位置 + 触发条件 + 我怎么故意触发验 3 步。」
+
+该炸的时候要炸，别装没事。
+上一条 33/100 · 下一条 35/100 → Happy path
+</pre>
+    </section>
+
+    <section class="post" id="p035">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#035</span>
+          <h2>停止向AI许愿 · 35/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-035">复制全文</button>
+          <a class="btn ghost" href="posts/035.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-035" class="body">停止向AI许愿 · 35/100
+
+AI 一上来就堆异常分支，主流程反而半通不通。
+口令：Happy path（主成功路径）
+
+场景：先跑通最常见成功流，再补边缘与失败。
+例如主成功路径：登录→加购→结算→支付成功。对比 Edge case：先跑通黄金路径再补空值/超限。默认一上来堆异常——口令纠正。
+
+直接复制给 AI：
+「只做 Happy path：______ 的最常见成功流。
+先交付：入口 → 成功结果可演示。
+非目标：异常码大全、重试、权限边角（下轮再说）。
+验收：我按主路径操作一次能看到成功结果；列 3 步给我。
+确认前不要扩大到异常矩阵。」
+
+先通主路，再铺支路。
+上一条 34/100 · 下一条 36/100 → Edge case
+</pre>
+    </section>
+
+    <section class="post" id="p036">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#036</span>
+          <h2>停止向AI许愿 · 36/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-036">复制全文</button>
+          <a class="btn ghost" href="posts/036.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-036" class="body">停止向AI许愿 · 36/100
+
+空字符串、超长输入、临界值——平时能跑，一碰就炸。
+口令：Edge case（边界情况）
+
+场景：少见但会炸的输入，要显式列出来测，别等用户撞。
+例如：qty=0、超长 SKU、并发双点支付。对比 Happy path：主路径先绿；边界情况专项列。默认「应该没空」——口令纠正。
+
+直接复制给 AI：
+「针对______列出 Edge case（至少 8 条：空/null/超长/临界/非法字符/时区/并发各至少一类）。
+对每条：期望行为（拒/截断/默认）+ 最小复现输入。
+禁止只说「已考虑边界」不给例子。
+先输出表，我确认后再改代码；改完我按表抽 3 条验。」
+
+少见不等于不会来。
+上一条 35/100 · 下一条 37/100 → Regression
+</pre>
+    </section>
+
+    <section class="post" id="p037">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#037</span>
+          <h2>停止向AI许愿 · 37/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-037">复制全文</button>
+          <a class="btn ghost" href="posts/037.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-037" class="body">停止向AI许愿 · 37/100
+
+新功能绿了，旧功能灰了——没人再走一遍旧场景。
+口令：Regression（回归）
+
+场景：每次改完必须拿旧场景再验，防新改动踩旧坑。
+例如：改计价后必须重跑「旧优惠券仍可用」。对比 Repro：回归防新改弄坏旧的；复现钉当前 bug。默认只验新功能——口令纠正。
+
+直接复制给 AI：
+「本次改动完成后做 Regression：
+1）列出可能弄坏的旧场景 ≥5 条（与______相关）
+2）每条给一句手工验法
+3）你先自检，失败项标红
+没跑回归不许说做完；禁止借回归名义大重构。」
+
+新能跑 ≠ 旧还在。
+上一条 36/100 · 下一条 38/100 → Fixture
+</pre>
+    </section>
+
+    <section class="post" id="p038">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#038</span>
+          <h2>停止向AI许愿 · 38/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-038">复制全文</button>
+          <a class="btn ghost" href="posts/038.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-038" class="body">停止向AI许愿 · 38/100
+
+测试今天过、明天挂——因为输入数据每次都不一样。
+口令：Fixture（测试夹具）
+
+场景：给测试准备稳定、可复现的输入，别靠手搓临时值。
+例如：测试用固定 users.json 三条账号。对比 Mock：Fixture 是稳定输入；Mock 是假依赖行为。默认测试数据漂移——口令纠正。
+
+直接复制给 AI：
+「为______补 Fixture：
+- 最小稳定数据集（可提交到仓库）
+- 说明如何加载/重置
+- 禁止测试依赖线上真实数据或随机不可复现值
+输出：夹具文件路径 + 覆盖的场景列表 + 我怎么本地跑 3 步。」
+
+测得住，先要料稳。
+上一条 37/100 · 下一条 39/100 → Mock
+</pre>
+    </section>
+
+    <section class="post" id="p039">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#039</span>
+          <h2>停止向AI许愿 · 39/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-039">复制全文</button>
+          <a class="btn ghost" href="posts/039.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-039" class="body">停止向AI许愿 · 39/100
+
+测自己的逻辑，却被真实支付/短信/第三方拖进泥潭。
+口令：Mock（模拟对象）
+
+场景：用假依赖替换外部系统，专注测本模块行为。
+例如：假支付网关固定返回成功。对比 Stub：Mock 可模拟交互；Stub 多写死返回。默认测试打真外网——口令纠正。
+
+直接复制给 AI：
+「给______的外部依赖加 Mock：
+- 列出要替换的接口
+- Mock 返回：成功/失败各至少一例
+- 禁止在单元测里打真实网络
+非目标：不改真实适配器实现。
+输出：Mock 清单 + 测试命令 + 我怎么确认没打到外网 3 步。」
+
+测自己，别测整个地球。
+上一条 38/100 · 下一条 40/100 → Stub
+</pre>
+    </section>
+
+    <section class="post" id="p040">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#040</span>
+          <h2>停止向AI许愿 · 40/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-040">复制全文</button>
+          <a class="btn ghost" href="posts/040.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-040" class="body">停止向AI许愿 · 40/100
+
+假依赖还「太聪明」，测试结果跟着波动。
+口令：Stub（桩）
+
+场景：需要写死答案的桩：稳定、可预期、不引入逻辑。
+例如：`getTax() =&gt; 0.1` 写死不随机。对比 Mock：桩更笨更稳。默认假依赖太聪明——口令纠正。
+
+直接复制给 AI：
+「为______提供 Stub（写死返回）：
+- 给定输入 → 固定输出（表驱动）
+- 禁止 Stub 里藏复杂分支或随机
+- 标明与真实实现的差异
+先输出：桩接口 + 返回表；确认后再接入测试。」
+
+桩要笨、要稳、要可预期。
+上一条 39/100 · 下一条 41/100 → Repro
+</pre>
+    </section>
+
+    <section class="post" id="p041">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#041</span>
+          <h2>停止向AI许愿 · 41/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-041">复制全文</button>
+          <a class="btn ghost" href="posts/041.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-041" class="body">停止向AI许愿 · 41/100
+
+Bug「有时会出现」——没有最小复现，修了也算猜。
+口令：Repro（复现）——先用最短步骤把问题稳定打出来。
+
+场景：线上偶发 500，AI 已经在改重试逻辑；你其实连复现步骤都没有。
+对比 Race：竞态是一类 bug；Repro 是修复前置。例如：环境+≤7步+期望vs实际写成卡。
+
+直接复制给 AI：
+「先写 Repro 卡，再改代码。填空例：
+环境：Node 20 / Postgres 15 / 分支 main@abc123
+步骤：1) POST /orders 创建 2) 立刻再 POST 同一 idempotency-key 3) GET /orders/:id
+期望：第二次返回首次订单；实际：生成两单或 500
+禁止边猜边改；没有稳定复现不许提交修复。
+输出复现卡后等我确认。」
+
+邻口令：Repro ≠ Fixture——Fixture 是给测试准备输入；Repro 是先证明 bug 可稳定打出。
+默认 harness 常直接开修；本口令纠正「无复现先动刀」。
+
+打得出来，才修得准。
+上一条 40/100 · 下一条 42/100 → Race
+</pre>
+    </section>
+
+    <section class="post" id="p042">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#042</span>
+          <h2>停止向AI许愿 · 42/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-042">复制全文</button>
+          <a class="btn ghost" href="posts/042.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-042" class="body">停止向AI许愿 · 42/100
+
+单线程测都绿，一并发就偶发错——典型竞态。
+口令：Race（竞态）——先写清交错条件，再改锁/顺序。
+
+场景：两个请求同时改同一购物车余额，单测绿、压测红。
+例如：A读余额→B读→A写→B写丢更新。对比 Repro：先写清交错条件再谈加锁。默认只跑单线程绿——口令纠正。
+
+直接复制给 AI：
+「处理 Race：购物车余额更新。
+交错条件例：A 读 balance=100 → B 读 100 → A 写 80 → B 写 90（丢更新）
+复现：并发 20 × PATCH /cart/balance
+修复只许三选一：行锁 / 队列串行 / 版本号乐观锁；说明为何。
+禁止 sleep 当修复；禁止扩大到无关模块。
+输出：竞态说明 + 修复点 + 加压验证 3 步。」
+
+邻口令：Race ≠ Deadlock——竞态是交错结果错；死锁是互相等停住。
+默认 harness 爱加 sleep/重试糊过去；本口令纠正「用时间换正确」。
+
+偶发不是玄学，是交错。
+上一条 41/100 · 下一条 43/100 → Deadlock
+</pre>
+    </section>
+
+    <section class="post" id="p043">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#043</span>
+          <h2>停止向AI许愿 · 43/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-043">复制全文</button>
+          <a class="btn ghost" href="posts/043.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-043" class="body">停止向AI许愿 · 43/100
+
+两个锁互相等，线程全停——日志却像「卡住了」。
+口令：Deadlock（死锁）——统一锁顺序，或加超时退出。
+
+场景：转账：线程1锁账户A再B，线程2锁B再A，全站挂起。
+例如：统一按账户ID从小到大加锁，或锁超时退出。对比 Race：死锁是环等；竞态是交错写。默认乱序加锁——口令纠正。
+
+直接复制给 AI：
+「排查/修复 Deadlock：转账双账户加锁。
+锁顺序图例（文字）：
+- 坏：T1: lock(A)→lock(B)；T2: lock(B)→lock(A)
+- 好：永远按 account_id 升序加锁；或单锁设 200ms 超时
+禁止盲目加大锁范围；禁止「重试到成功」当根治。
+输出：锁顺序图 + 改动点 + 两并发触发/验证 3 步。」
+
+邻口令：Deadlock ≠ Timeout——超时是单次等待上限；死锁要先修获取顺序。
+默认 harness 遇卡住就建议重启；本口令纠正「重启当修复」。
+
+谁先拿锁，规则要统一。
+上一条 42/100 · 下一条 44/100 → Atomic
+</pre>
+    </section>
+
+    <section class="post" id="p044">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#044</span>
+          <h2>停止向AI许愿 · 44/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-044">复制全文</button>
+          <a class="btn ghost" href="posts/044.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-044" class="body">停止向AI许愿 · 44/100
+
+「看起来一步」其实拆成两步，中断就留半成品。
+口令：Atomic（原子）——要么完整发生，要么完全不发生。
+
+场景：扣库存成功、写订单失败，库存已少但用户没单。
+例如：扣库存+写订单同事务，失败全无。对比 Transaction：原子=完整发生或完全不发生。默认两步各成功——口令纠正。
+
+直接复制给 AI：
+「把「下单=扣库存+写订单」做成 Atomic。
+完整成功例：{order_id, stock_delta:-1, status:paid} 同事务提交
+失败：不得留下 stock 已减、orders 无行 的可观察半成品
+手段三选一：DB 事务 / 单写聚合 / 临时行→正式替换；说明理由。
+禁止「稍后补偿」冒充原子除非我批准。
+输出：边界说明 + 中断半路验收 3 步。」
+
+邻口令：Atomic ≠ Transaction——Transaction 是手段；Atomic 是对外可观察的完整/全无承诺。
+默认 harness 常拆成多步「先能跑」；本口令纠正「半成品可进主路径」。
+
+完整，或没有。
+上一条 43/100 · 下一条 45/100 → Timeout
+</pre>
+    </section>
+
+    <section class="post" id="p045">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#045</span>
+          <h2>停止向AI许愿 · 45/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-045">复制全文</button>
+          <a class="btn ghost" href="posts/045.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-045" class="body">停止向AI许愿 · 45/100
+
+下游挂了，调用方无限等——线程/连接被拖死。
+口令：Timeout（超时）
+
+场景：超过时限必须停，并规定超时后的行为。
+例如：把「偶尔超时」写成可注入的失败点。对比 Repro：先复现；再把偶发变必现。默认「我本地好的」——口令纠正。
+
+直接复制给 AI：
+「为______加上 Timeout：
+- 时限数值与单位
+- 超时后：取消/返回错误/是否可重试（写死）
+禁止无限等待；禁止超时后静默当成功。
+输出：超时配置点 + 错误形态 + 我怎么用慢桩验 3 步。」
+
+等得起，也要停得住。
+上一条 44/100 · 下一条 46/100 → Retry
+</pre>
+    </section>
+
+    <section class="post" id="p046">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#046</span>
+          <h2>停止向AI许愿 · 46/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-046">复制全文</button>
+          <a class="btn ghost" href="posts/046.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-046" class="body">停止向AI许愿 · 46/100
+
+失败就再试——没上限就把下游打爆，把自己拖死。
+口令：Retry（重试）
+
+场景：重试必须有次数上限和终止条件。
+例如：日志必带 requestId。对比 Metrics：日志给人读串事。默认无关联 ID——口令纠正。
+
+直接复制给 AI：
+「为______设计 Retry：
+- 最多几次、间隔、哪些错误可重试/不可重试
+- 成功与耗尽后的返回
+禁止无限重试；禁止对非幂等写操作盲目重试（先说明为何安全）。
+输出：策略表 + 代码改动点 + 我怎么用失败桩验 3 步。」
+
+再试可以，没完没了不行。
+上一条 45/100 · 下一条 47/100 → Backoff
+</pre>
+    </section>
+
+    <section class="post" id="p047">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#047</span>
+          <h2>停止向AI许愿 · 47/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-047">复制全文</button>
+          <a class="btn ghost" href="posts/047.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-047" class="body">停止向AI许愿 · 47/100
+
+重试像机关枪，下游刚缓过来又被打趴。
+口令：Backoff（退避）
+
+场景：重试间隔要拉长（退避），必要时加抖动。
+例如：QPS/错误率面板+阈值。对比 Log：指标看趋势。默认只有 print——口令纠正。
+
+直接复制给 AI：
+「给______的重试加 Backoff：
+- 算法：固定/指数 + 是否 jitter
+- 上限间隔与总尝试次数
+禁止所有重试同一时刻打出（雷群）；禁止改业务语义。
+输出：间隔序列示例 + 改动点 + 我怎么观察间隔 3 步。」
+
+退一步，给下游喘气。
+上一条 46/100 · 下一条 48/100 → Circuit breaker
+</pre>
+    </section>
+
+    <section class="post" id="p048">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#048</span>
+          <h2>停止向AI许愿 · 48/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-048">复制全文</button>
+          <a class="btn ghost" href="posts/048.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-048" class="body">停止向AI许愿 · 48/100
+
+下游持续 500，你还一直打——雪崩自己制造。
+口令：Circuit breaker（熔断）
+
+场景：失败率过高时先断开，过一会儿再试探恢复。
+例如：一条下单 trace 跨 API→队列→worker。对比 Log：追踪看链路。默认各记各的——口令纠正。
+
+直接复制给 AI：
+「为______加 Circuit breaker：
+- 打开条件（失败次数/率）
+- 半开试探策略
+- 关闭条件
+禁止熔断时返回「假成功」；错误形态要可观测。
+输出：状态机说明 + 配置 + 我怎么打满失败触发/恢复验 3 步。」
+
+先断开，再试探，防雪崩。
+上一条 47/100 · 下一条 49/100 → Fallback
+</pre>
+    </section>
+
+    <section class="post" id="p049">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#049</span>
+          <h2>停止向AI许愿 · 49/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-049">复制全文</button>
+          <a class="btn ghost" href="posts/049.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-049" class="body">停止向AI许愿 · 49/100
+
+主路径挂了整页白屏——没有备选结果顶住。
+口令：Fallback（降级）
+
+场景：主依赖不可用时，用明确的降级结果保底。
+例如：推荐服务挂了仍返回热门榜缓存。对比 Feature flag：降级保主路径。默认主依赖一挂整页白——口令纠正。
+
+直接复制给 AI：
+「为______设计 Fallback：
+- 触发条件
+- 降级结果（缓存旧值/默认/只读）写清楚
+- 必须让用户/日志能区分「降级中」
+禁止静默吞错装正常；禁止降级里再打同一挂掉的依赖。
+输出：降级表 + 改动点 + 我怎么断主依赖验 3 步。」
+
+主路挂了，备路要顶得住。
+上一条 48/100 · 下一条 50/100 → Deadline
+</pre>
+    </section>
+
+    <section class="post" id="p050">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#050</span>
+          <h2>停止向AI许愿 · 50/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-050">复制全文</button>
+          <a class="btn ghost" href="posts/050.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-050" class="body">停止向AI许愿 · 50/100
+
+每个调用都有超时，整条链路还是拖过了用户能等的极限。
+口令：Deadline（截止时间）
+
+场景：要的是端到端总时限，不只单次超时。
+例如：dark_launch 默认关。对比 Gradual rollout：先藏再放量。默认一推全量——口令纠正。
+
+直接复制给 AI：
+「给链路______设 Deadline（总时限）：
+- 预算如何分给子调用
+- 剩余时间不足时直接快失败
+禁止只设单点 Timeout 却不管总预算。
+输出：预算表 + 传播方式 + 我怎么用慢子调用验 3 步。」
+
+总时限到了，整条链都该停。
+上一条 49/100 · 下一条 51/100 → Rate limit
+</pre>
+    </section>
+
+    <section class="post" id="p051">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#051</span>
+          <h2>停止向AI许愿 · 51/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-051">复制全文</button>
+          <a class="btn ghost" href="posts/051.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-051" class="body">停止向AI许愿 · 51/100
+
+突发流量把自己或下游打穿——没有速率闸门。
+口令：Rate limit（限流）
+
+场景：限制请求速率，保护自身与下游。
+例如：5% 流量打新计价。对比 Feature flag：灰度是放量节奏。默认全开——口令纠正。
+
+直接复制给 AI：
+「为______加 Rate limit：
+- 维度（用户/IP/API key）+ 额度/窗口
+- 超限返回（状态码/错误体）写死
+禁止超限时排队到内存爆；禁止悄悄丢请求不告知。
+输出：策略 + 改动点 + 我怎么打满额度验 3 步。」
+
+闸门先装上，再谈吞吐。
+上一条 50/100 · 下一条 52/100 → Backpressure
+</pre>
+    </section>
+
+    <section class="post" id="p052">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#052</span>
+          <h2>停止向AI许愿 · 52/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-052">复制全文</button>
+          <a class="btn ghost" href="posts/052.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-052" class="body">停止向AI许愿 · 52/100
+
+上游狂塞，下游消化不了，队列堆到 OOM。
+口令：Backpressure（背压）
+
+场景：下游吃不下时上游必须减速，而不是无限缓冲。
+例如：一键回滚上一版本；3 分钟内可退。对比 Migration down：发布也要退路。默认「再热修」——口令纠正。
+
+直接复制给 AI：
+「为______加 Backpressure：
+- 信号：拒绝/阻塞/窗口减小（选一并说明）
+- 上游如何响应
+禁止无限队列当解决方案；禁止丢数据不记账。
+输出：压力传导路径 + 改动点 + 我怎么制造慢消费者验 3 步。」
+
+吃不下就减速，别堆到爆。
+上一条 51/100 · 下一条 53/100 → Dedup
+</pre>
+    </section>
+
+    <section class="post" id="p053">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#053</span>
+          <h2>停止向AI许愿 · 53/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-053">复制全文</button>
+          <a class="btn ghost" href="posts/053.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-053" class="body">停止向AI许愿 · 53/100
+
+用户连点两下，订单两份——重复请求没被挡。
+口令：Dedup（去重）
+
+场景：同一业务请求只应生效一次。
+例如：changelog 标明破坏性变更。对比 Spec：先对齐预期。默认静默改行为——口令纠正。
+
+直接复制给 AI：
+「为______做 Dedup：
+- 去重键怎么算（哪些字段）
+- 窗口多久
+- 重复到达时返回首次结果还是明确「重复」
+禁止只靠前端防抖；必须服务端生效。
+输出：键设计 + 存储 + 我怎么连发两次验 3 步。」
+
+同样的请求，只认一次。
+上一条 52/100 · 下一条 54/100 → Rollback
+</pre>
+    </section>
+
+    <section class="post" id="p054">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#054</span>
+          <h2>停止向AI许愿 · 54/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-054">复制全文</button>
+          <a class="btn ghost" href="posts/054.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-054" class="body">停止向AI许愿 · 54/100
+
+新版本一上就炸，却找不到「一键退回上一版」的路径。
+口令：Rollback（回滚）——出问题快速退回已知好版本。
+
+场景：刚发 v1.8.0，错误率飙升；没人记得回滚命令和数据兼容点。
+
+直接复制给 AI：
+「为支付服务准备 Rollback 卡（≤5 步）：
+例：1) kubectl set image deploy/pay pay=pay:1.7.3
+2) 等 ready 3) 打 GET /healthz 4) 对比 error_rate 5) 宣布完成
+数据：回滚后新字段 payment.v2_meta 是否可读？写明兼容/需清洗。
+禁止「再热修一把」代替回滚预案。
+先输出回滚卡，我确认后再谈放量。」
+
+邻口令：Rollback ≠ Feature flag——开关是隐藏新功能；回滚是整包退回旧产物。
+默认 harness 修好当下就交差；本口令纠正「无退路也上线」。
+
+前进前，先看好退路。
+上一条 53/100 · 下一条 55/100 → Feature flag
+</pre>
+    </section>
+
+    <section class="post" id="p055">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#055</span>
+          <h2>停止向AI许愿 · 55/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-055">复制全文</button>
+          <a class="btn ghost" href="posts/055.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-055" class="body">停止向AI许愿 · 55/100
+
+代码一合并就全量见光，出问题只能紧急回滚整包。
+口令：Feature flag（功能开关）
+
+场景：先藏进开关，再按环境/比例打开。
+例如：新结算 UI 用 flag 关掉。对比 Gradual rollout：开关控制可见性。默认合并即见光——口令纠正。
+
+直接复制给 AI：
+「给______加 Feature flag：
+- 默认关闭
+- 开关位置与配置方式
+- 打开/关闭不影响无关功能
+禁止把未完成功能在默认开的情况下合并；禁止用 flag 永久堆尸。
+输出：flag 名 + 默认值 + 我怎么切换验 3 步。」
+
+先藏好，再按开关亮。
+上一条 54/100 · 下一条 56/100 → Canary
+</pre>
+    </section>
+
+    <section class="post" id="p056">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#056</span>
+          <h2>停止向AI许愿 · 56/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-056">复制全文</button>
+          <a class="btn ghost" href="posts/056.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-056" class="body">停止向AI许愿 · 56/100
+
+一上全量，一炸全站——没有小流量试毒。
+口令：Canary（金丝雀）
+
+场景：先放一小撮用户/实例，看指标再扩。
+例如：密码禁止进日志。对比 Authz：敏感数据红线。默认 debug 打印全对象——口令纠正。
+
+直接复制给 AI：
+「为______做 Canary 发布计划：
+- 比例（如 1%→10%→100%）与晋级条件
+- 观察指标与回滚条件
+禁止「感觉没事就全量」；必须写清止损。
+输出：放量表 + 监控项 + 我怎么确认金丝雀流量打中 3 步。」
+
+先一小撮，再谈全量。
+上一条 55/100 · 下一条 57/100 → Blue-green
+</pre>
+    </section>
+
+    <section class="post" id="p057">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#057</span>
+          <h2>停止向AI许愿 · 57/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-057">复制全文</button>
+          <a class="btn ghost" href="posts/057.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-057" class="body">停止向AI许愿 · 57/100
+
+原地升级改到一半失败，环境处于四不像。
+口令：Blue-green（蓝绿发布）
+
+场景：两套环境切换：出问题秒切回旧环境。
+例如：写操作前鉴权；无角色 403。对比 Boundary：鉴权锁人。默认先写后补权限——口令纠正。
+
+直接复制给 AI：
+「设计 Blue-green 切换：______。
+- 蓝/绿如何区分
+- 切换与切回步骤
+- 会话/连接是否粘滞（写明）
+禁止在切流量同时做不可逆数据迁移（拆开）。
+输出：切换清单 + 回切清单 + 我怎么演练 3 步。」
+
+两套环境，一秒切回。
+上一条 56/100 · 下一条 58/100 → Dark launch
+</pre>
+    </section>
+
+    <section class="post" id="p058">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#058</span>
+          <h2>停止向AI许愿 · 58/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-058">复制全文</button>
+          <a class="btn ghost" href="posts/058.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-058" class="body">停止向AI许愿 · 58/100
+
+新逻辑想用真实流量练手，又怕影响用户结果。
+口令：Dark launch（暗发布）
+
+场景：影子跑新路径，对比差异，但不把新结果返回用户。
+
+直接复制给 AI：
+「对______做 Dark launch：
+- 真实请求进新逻辑，结果只记录不返回
+- 对比旧/新差异指标
+- 对用户路径零影响
+禁止暗发布写入生产关键状态；只读或写隔离存储。
+输出：流量镜像方式 + 对比项 + 我怎么确认用户仍走旧结果 3 步。」
+
+真流量练兵，用户无感。
+上一条 57/100 · 下一条 59/100 → Breaking change
+</pre>
+    </section>
+
+    <section class="post" id="p059">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#059</span>
+          <h2>停止向AI许愿 · 59/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-059">复制全文</button>
+          <a class="btn ghost" href="posts/059.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-059" class="body">停止向AI许愿 · 59/100
+
+字段删了、语义变了，旧客户端集体 500——还没人宣告。
+口令：Breaking change（破坏性变更）
+
+场景：会弄坏旧调用方的变更必须显式声明并给迁移路径。
+例如：依赖版本钉死，禁止 ^。对比 Constraint：供应链也是约束。默认追最新——口令纠正。
+
+直接复制给 AI：
+「本次若含 Breaking change，必须：
+- 明确列出破坏点（______）
+- 迁移指南（旧→新）
+- 兼容窗口或主版本+1 策略
+禁止静默破坏；禁止「调用方自己看着办」不加说明。
+先输出破坏清单，我确认后再改。」
+
+要破坏，先亮牌。
+上一条 58/100 · 下一条 60/100 → Backward compatible
+</pre>
+    </section>
+
+    <section class="post" id="p060">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#060</span>
+          <h2>停止向AI许愿 · 60/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-060">复制全文</button>
+          <a class="btn ghost" href="posts/060.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-060" class="body">停止向AI许愿 · 60/100
+
+新版本一发，旧客户端全挂——兼容没列入验收。
+口令：Backward compatible（向后兼容）
+
+场景：新版本默认不弄坏旧调用方。
+例如：旧客户端仍可读新字段默认值。对比 Schema：兼容列入验收。默认只顾新版——口令纠正。
+
+直接复制给 AI：
+「改______时保持 Backward compatible：
+- 旧客户端常见请求仍成功
+- 新增字段必须可忽略；禁止改旧字段语义
+若必须破坏：停下来标成 Breaking change，不要硬做兼容假象。
+输出：兼容矩阵（旧×新）+ 我怎么用旧客户端验 3 步。」
+
+新能来，旧不伤。
+上一条 59/100 · 下一条 61/100 → SemVer
+</pre>
+    </section>
+
+    <section class="post" id="p061">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#061</span>
+          <h2>停止向AI许愿 · 61/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-061">复制全文</button>
+          <a class="btn ghost" href="posts/061.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-061" class="body">停止向AI许愿 · 61/100
+
+版本号乱跳，调用方不知道是小修还是断崖。
+口令：SemVer（语义化版本）
+
+场景：主/次/修订号要表达兼容性承诺。
+例如：100 次/分钟/用户。对比 Idempotent：限流防打爆。默认无上限——口令纠正。
+
+直接复制给 AI：
+「为______的版本按 SemVer 提议：
+- MAJOR / MINOR / PATCH 各自变更列表
+- 说明为何是这一级
+禁止无关改动刷大版本；禁止破坏性变更只加 PATCH。
+输出：版本建议 + changelog 要点（中文）+ 我怎么核对 3 条规则。」
+
+版本号是契约，不是装饰。
+上一条 60/100 · 下一条 62/100 → Deprecation
+</pre>
+    </section>
+
+    <section class="post" id="p062">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#062</span>
+          <h2>停止向AI许愿 · 62/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-062">复制全文</button>
+          <a class="btn ghost" href="posts/062.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-062" class="body">停止向AI许愿 · 62/100
+
+旧 API 直接删，调用方毫无过渡期。
+口令：Deprecation（弃用）
+
+场景：先宣告弃用与淘汰期，再删除。
+例如：缓存 key 带版本；SSOT 仍是 DB。对比 SSOT：缓存非权威。默认缓存当真相——口令纠正。
+
+直接复制给 AI：
+「弃用______：
+- 标注 deprecated 与替代方案
+- 淘汰日期/版本
+- 过渡期内旧路径仍可用并打警告
+禁止 intra-day 直接删除仍有流量的接口。
+输出：弃用公告草稿 + 代码标记点 + 我怎么看到警告验 3 步。」
+
+先宣告，再落幕。
+上一条 61/100 · 下一条 63/100 → Tech debt
+</pre>
+    </section>
+
+    <section class="post" id="p063">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#063</span>
+          <h2>停止向AI许愿 · 63/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-063">复制全文</button>
+          <a class="btn ghost" href="posts/063.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-063" class="body">停止向AI许愿 · 63/100
+
+「先这样上」之后没人记账，债利息变成灾难。
+口令：Tech debt（技术债）
+
+场景：已知捷径要登记代价与还债计划，别装看不见。
+例如：队列消息可重放且消费幂等。对比 Transaction：跨服务靠重试+幂等。默认 fire-and-forget——口令纠正。
+
+直接复制给 AI：
+「把______记为 Tech debt：
+- 现状捷径是什么
+- 代价（风险/速度/钱）
+- 还债计划（触发条件或日期）
+禁止借「还债」名义无范围重写；本轮只记账或还一小笔（我指定）。
+输出：债务卡 + 若动手则最小改动点 + 验收 3 步。」
+
+债可借，账要记。
+上一条 62/100 · 下一条 64/100 → Rewrite
+</pre>
+    </section>
+
+    <section class="post" id="p064">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#064</span>
+          <h2>停止向AI许愿 · 64/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-064">复制全文</button>
+          <a class="btn ghost" href="posts/064.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-064" class="body">停止向AI许愿 · 64/100
+
+AI 动不动「推倒重来」——默认这是高危禁令。
+口令：Rewrite（重写）——默认禁用，除非契约与范围写死且我批准。
+
+场景：你要修一个解析边界，它提议「用新框架重写整个 parser」。
+例如：保留 parse() 契约形状不变才允许重写。对比 Refactor：重构默认；重写默认禁用。默认动不动推倒——口令纠正。
+
+直接复制给 AI：
+「Rewrite 默认禁止。若你认为必须重写 src/parser/：
+先交审批卡：理由 / 保留契约（例：parse(input)-&gt;{ok,value,error} 形状不变）/
+范围边界（只 parser/，不动 API 层）/ 迁移与回滚 / 工期风险。
+未经书面确认：禁止删旧实现、禁止开平行世界。
+未批准：改为最小 Patch。」
+
+邻口令：Rewrite ≠ Refactor——重构保行为整理内部；重写是换实现，风险高一档。
+默认 harness 爱「干净重来」；本口令纠正「重写当默认选项」。
+
+推倒重来，先过审批。
+上一条 63/100 · 下一条 65/100 → Guard clause
+</pre>
+    </section>
+
+    <section class="post" id="p065">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#065</span>
+          <h2>停止向AI许愿 · 65/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-065">复制全文</button>
+          <a class="btn ghost" href="posts/065.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-065" class="body">停止向AI许愿 · 65/100
+
+主逻辑埋在三层 if-else 里，合法路径都看不清。
+口令：Guard clause（卫语句）——先挡非法，主路径走直线。
+
+场景：创建用户函数里嵌套校验邮箱、角色、配额，读到第十行还没进正题。
+例如：非法邮箱直接 return 错误，主路径直线创建。对比 SoC：卫语句先挡非法。默认深嵌套——口令纠正。
+
+直接复制给 AI：
+「重构 createUser 用 Guard clause，行为不变：
+例：
+if (!email) return 400;
+if (!email.includes(&#x27;@&#x27;)) return 400;
+if (await exists(email)) return 409;
+// 以下直线：建用户→写默认设置→返回
+禁止改对外错误码/文案；禁止借机加功能。
+输出：守卫列表 + diff 摘要 + 非法输入验收 3 步。」
+
+邻口令：Guard clause ≠ Error contract——错误约定规定失败长什么样；卫语句是代码结构手法。
+默认 harness 常继续堆嵌套 if；本口令纠正「主路被卫兵淹没」。
+
+先挡脏活，主路走直。
+上一条 64/100 · 下一条 66/100 → Dead code
+</pre>
+    </section>
+
+    <section class="post" id="p066">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#066</span>
+          <h2>停止向AI许愿 · 66/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-066">复制全文</button>
+          <a class="btn ghost" href="posts/066.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-066" class="body">停止向AI许愿 · 66/100
+
+「可能还有用」的代码堆成坟场，AI 却不敢或乱删。
+口令：Dead code（死代码）——先证明无引用，再删除。
+
+场景：utils/legacyPrice.js 没人敢动；AI 有时全删、有时碰都不碰。
+对比 Ablation：消融是试验拆；Dead code 是证据齐全再删。例如：搜索0引用+测试未覆盖才进删除名单。
+
+直接复制给 AI：
+「清理 Dead code：utils/legacyPrice.js。
+先交证据表：
+符号 calcOld | rg 命中 0 | 测试引用 0 | 动态加载 否
+我确认后再删；禁止删「看起来像」证据不足的。
+每删一处：证据 + git revert 回滚方式。
+确认前不动手。」
+
+邻口令：Dead code ≠ Ablation——消融是实验性拿掉一块看影响；死代码是已证明无引用再删。
+默认 harness 要么不敢删要么按「感觉」删；本口令纠正「无证据动坟场」。
+
+先证明没用，再送走。
+上一条 65/100 · 下一条 67/100 → Diff
+</pre>
+    </section>
+
+    <section class="post" id="p067">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#067</span>
+          <h2>停止向AI许愿 · 67/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-067">复制全文</button>
+          <a class="btn ghost" href="posts/067.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-067" class="body">停止向AI许愿 · 67/100
+
+AI 改完甩一坨，你不知道到底动了什么。
+口令：Diff（差异摘要）——先看清改了什么，再决定收不收。
+
+场景：你让修一个文案，它交回 12 文件「顺手格式化」的大 diff。
+例如：摘要列「改了哪些文件/为何」。对比 Patch：先看清再收。默认甩大坨——口令纠正。
+
+直接复制给 AI：
+「先给 Diff 摘要（不要继续改）：
+例：
+- src/ui/Banner.tsx：文案「立即开通」→「开始试用」（需求内）
+- src/ui/Banner.tsx：把单引号全改双引号（需求外，应撤回）
+- package-lock.json：无相关（应撤回）
+风险点：文案是否走 i18n
+未经确认禁止扩大范围、禁止顺手全文件格式化。
+我确认摘要后再进入 Patch。」
+
+邻口令：Diff ≠ Patch——Diff 是先读清单；Patch 是确认后按清单动刀。
+默认 harness 改完就宣称完成；本口令纠正「无摘要先收货」。
+
+先看清单，再收货。
+上一条 66/100 · 下一条 68/100 → Patch
+</pre>
+    </section>
+
+    <section class="post" id="p068">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#068</span>
+          <h2>停止向AI许愿 · 68/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-068">复制全文</button>
+          <a class="btn ghost" href="posts/068.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-068" class="body">停止向AI许愿 · 68/100
+
+你要的是补丁，它给你整仓重写。
+口令：Patch（补丁）——只改指定文件/函数，列表外禁止动刀。
+
+场景：只要改 validateEmail()，结果 lint 规则和相邻模块也被「优化」。
+例如：只准改 validateEmail.ts。对比 Minimal change/Boundary：补丁是名单内最小刀。默认顺手半仓——口令纠正。
+
+直接复制给 AI：
+「只打 Patch，限定：
+- 文件：src/auth/validateEmail.ts
+- 函数：validateEmail
+列表外禁止修改（含格式化与「顺手」）。
+先复述将改符号：validateEmail 内的正则与返回码；确认后一次性最小改动。
+改完：unified diff 说明 + 验收 3 步。」
+
+邻口令：Patch ≠ Minimal change——最小改动是目标切口哲学；Patch 是文件/符号级硬边界。
+默认 harness 常顺手整理周边；本口令纠正「补丁变整仓」。
+
+补丁要小，刀口要准。
+上一条 67/100 · 下一条 69/100 → Behavior-preserving
+</pre>
+    </section>
+
+    <section class="post" id="p069">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#069</span>
+          <h2>停止向AI许愿 · 69/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-069">复制全文</button>
+          <a class="btn ghost" href="posts/069.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-069" class="body">停止向AI许愿 · 69/100
+
+名义整理，实际改了默认值/文案/顺序——行为漂移。
+口令：Behavior-preserving（保持行为）——整理时对外可观察行为必须不变。
+
+场景：AI「重构」排序：稳定排序变不稳定，用户列表顺序漂了。
+例如：排序稳定性必须保持。对比 Refactor：整理不得漂可观察行为。默认「整理」改默认值——口令纠正。
+
+直接复制给 AI：
+「Behavior-preserving 整理 sortUsers：
+可观察行为对照例：
+1) 同名用户相对顺序不变
+2) 默认 pageSize 仍为 20
+3) 错误码 400 文案不变
+4) 空列表返回 [] 不是 null
+5) 耗时同量级（无额外 N+1）
+禁止借机改需求。改完逐条自检。
+输出：改动点 + 行为对照勾选 + 验收 3 步。」
+
+邻口令：Behavior-preserving ≠ Refactor——重构常以此为前提；本口令把「不变」写成硬验收。
+默认 harness 整理时爱「顺便改进」；本口令纠正「整理夹带行为变更」。
+
+外表不变，内里才叫整理。
+上一条 68/100 · 下一条 70/100 → File boundary
+</pre>
+    </section>
+
+    <section class="post" id="p070">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#070</span>
+          <h2>停止向AI许愿 · 70/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-070">复制全文</button>
+          <a class="btn ghost" href="posts/070.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-070" class="body">停止向AI许愿 · 70/100
+
+任务没锁文件，AI 改着改着就出圈。
+口令：File boundary（文件边界）——先锁定目录/文件列表，列表外只读不写。
+
+场景：改搜索组件，登录与订单目录也被写入。
+例如：只写 src/search/**。对比 Boundary：文件边界是路径白名单。默认改着出圈——口令纠正。
+
+直接复制给 AI：
+「File boundary 锁死，只允许改：
+- src/search/**
+- tests/search/**
+列表外：读可以，写一次算失败（例：禁止动 src/auth/）。
+先列计划：将改文件 + 每步验收；确认后再改。」
+
+邻口令：File boundary ≠ Boundary——Boundary 可锁模块/职责；File boundary 专锁路径列表。
+默认 harness 按「相关就改」扩写；本口令纠正「无路径白名单就开工」。
+
+先锁文件柜，再给钥匙。
+上一条 69/100 · 下一条 71/100 → Checklist
+</pre>
+    </section>
+
+    <section class="post" id="p071">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#071</span>
+          <h2>停止向AI许愿 · 71/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-071">复制全文</button>
+          <a class="btn ghost" href="posts/071.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-071" class="body">停止向AI许愿 · 71/100
+
+做完了靠感觉——没有可勾选的完成项。
+口令：Checklist（验收清单）——缺一项勾选，就不算交付。
+
+场景：AI 说登录改完了；你一跑：忘了错误态、忘了移动端、测也没跑。
+对比 DoD：DoD 出门硬标准；Checklist 是本单勾选表。例如：[ ]本地跑通 [ ]主路径验过 [ ]未做已列。
+
+直接复制给 AI：
+「交付登录错误态文案前 Checklist 定稿：
+项1：本地测试绿
+项2：错误密码显示约定文案
+项3：空邮箱前端拦截
+项4：未做事项已列出（如未改 i18n）
+缺一项禁止说完成。先把清单给我确认，再开工。」
+
+邻口令：Checklist ≠ DoD——DoD 是团队通用硬条件；Checklist 是本任务实例化勾选项。
+默认 harness 用「基本可用」收工；本口令纠正「无勾选表就宣称完成」。
+
+勾完才算完。
+上一条 70/100 · 下一条 72/100 → Prompt contract
+</pre>
+    </section>
+
+    <section class="post" id="p072">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#072</span>
+          <h2>停止向AI许愿 · 72/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-072">复制全文</button>
+          <a class="btn ghost" href="posts/072.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-072" class="body">停止向AI许愿 · 72/100
+
+提示词含糊，AI 就自编目标——事后扯皮。
+口令：Prompt contract（提示契约）——把目标/约束/非目标/输出格式写死进提示。
+
+场景：你说「优化搜索」，它自行加了推荐算法和 UI 改版。
+例如：目标/约束/非目标/输出格式写进提示。对比 Contract：跟模型也要契约。默认「优化一下」——口令纠正。
+
+直接复制给 AI：
+「把我的需求收成 Prompt contract（可执行提示草稿）：
+例：
+目标：搜索延迟 P95 &lt; 200ms
+约束：只改 src/search/query.ts；禁止换搜索引擎
+非目标：不做推荐、不改 UI
+输出格式：改动点列表 + 前后 P95 数字
+禁止把我没提的「优化建议」写进强制范围。
+先交契约草稿，我确认后再执行。」
+
+邻口令：Prompt contract ≠ Contract——Contract 锁接口/数据；Prompt contract 锁你给 AI 的那张任务单。
+默认 harness 吃模糊句就开干；本口令纠正「无合同提示」。
+
+提示即合同，合同先签字。
+上一条 71/100 · 下一条 73/100 → Ground truth
+</pre>
+    </section>
+
+    <section class="post" id="p073">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#073</span>
+          <h2>停止向AI许愿 · 73/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-073">复制全文</button>
+          <a class="btn ghost" href="posts/073.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-073" class="body">停止向AI许愿 · 73/100
+
+AI 说对了，却没有标准答案可对——你只能干瞪眼。
+口令：Ground truth（对照真相）——用已有测试或金标样例当唯一对照。
+
+场景：改价格计算，AI 说「对了」；你没有 fixtures/prices.golden.json 可 diff。
+例如：prices.golden.json 逐行对照。对比 AC：有金标才验得了。默认靠嘴说对——口令纠正。
+
+直接复制给 AI：
+「以 Ground truth 为准：tests/fixtures/prices.golden.json。
+例金标行：{&quot;sku&quot;:&quot;A1&quot;,&quot;qty&quot;:2,&quot;coupon&quot;:&quot;SAVE10&quot;,&quot;expect&quot;:18.00}
+实现必须对齐金标；冲突时改实现不改金标，除非我批准。
+禁止手改金标「让测试变绿」。
+输出：对齐点 + 失败差分看法 + 跑金标验收 3 步。」
+
+邻口令：Ground truth ≠ Spec——Spec 写期望行为；Ground truth 是可跑的对照物。
+默认 harness 常自造「看起来对」的例子；本口令纠正「无金标自嗨」。
+
+有金标，才有对错。
+上一条 72/100 · 下一条 74/100 → Hand-off
+</pre>
+    </section>
+
+    <section class="post" id="p074">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#074</span>
+          <h2>停止向AI许愿 · 74/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-074">复制全文</button>
+          <a class="btn ghost" href="posts/074.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-074" class="body">停止向AI许愿 · 74/100
+
+下一轮 AI/人接不上——上下文缺文件、缺决策、缺坑。
+口令：Hand-off（交接说明）
+
+场景：交给下一棒的信息必须齐，能独立续做。
+例如：提示词要求只输出 JSON。对比 Contract：跟模型的接口也要契约。默认散文指令——口令纠正。
+
+直接复制给 AI：
+「写 Hand-off 文档（本轮交付物）：
+- 目标与已完成
+- 关键文件路径
+- 未决决策/坑
+- 下一棒第一步
+禁止只说「看 git」；必须可独立续做。
+输出交接卡，我按卡换人试跑。」
+
+交得出去，才算做完。
+上一条 73/100 · 下一条 75/100 → Stop condition
+</pre>
+    </section>
+
+    <section class="post" id="p075">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#075</span>
+          <h2>停止向AI许愿 · 75/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-075">复制全文</button>
+          <a class="btn ghost" href="posts/075.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-075" class="body">停止向AI许愿 · 75/100
+
+AI 改个没完，永远「再优化一点」。
+口令：Stop condition（停止条件）——写死做到哪必须停，防无限改。
+
+场景：测试已绿、清单已勾，它还在「顺便」重命名半个包。
+例如：测试全绿或超时 30 分立即停。对比 DoD/Checklist：防无限改。默认永远再优化——口令纠正。
+
+直接复制给 AI：
+「Stop condition 写死，满足任一立即停止：
+例：1) tests/search/* 全绿 2) Checklist 勾完 3) 改动超出 src/search/** 4) 已满 30 分钟
+达标后禁止继续「顺便」；只允许输出总结。
+先复述停止条件，我确认后开工。」
+
+邻口令：Stop condition ≠ Non-goal——非目标列不做的事；停止条件是何时必须收工。
+默认 harness 倾向继续改到「更完美」；本口令纠正「无终点任务」。
+
+有终点，才不会跑飞。
+上一条 74/100 · 下一条 76/100 → Scope
+</pre>
+    </section>
+
+    <section class="post" id="p076">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#076</span>
+          <h2>停止向AI许愿 · 76/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-076">复制全文</button>
+          <a class="btn ghost" href="posts/076.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-076" class="body">停止向AI许愿 · 76/100
+
+一句话需求，AI 听成整季路线图。
+口令：Scope（范围）
+
+场景：本次任务边界用一句话钉死。
+例如：工具白名单只 read/list。对比 Boundary：Agent 工具面要画线。默认工具全开——口令纠正。
+
+直接复制给 AI：
+「Scope 一句话：只做______；不做______。
+任何新想法进「下轮候选」，本轮禁止动手。
+先复述范围与非目标；确认前不要改代码。
+改完对照范围自检，越界项标红撤销。」
+
+一句话钉死，才不蔓延。
+上一条 75/100 · 下一条 77/100 → Pagination
+</pre>
+    </section>
+
+    <section class="post" id="p077">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#077</span>
+          <h2>停止向AI许愿 · 77/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-077">复制全文</button>
+          <a class="btn ghost" href="posts/077.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-077" class="body">停止向AI许愿 · 77/100
+
+一次拉十万行，内存和接口一起爆。
+口令：Pagination（分页）
+
+场景：大数据按页取，约定页大小与翻页令牌。
+例如：pageSize≤100；用 cursor 翻页。对比 N+1：一次别拉爆。默认一次十万行——口令纠正。
+
+直接复制给 AI：
+「为______加 Pagination：
+- page size 上限
+- 翻页方式（offset/cursor）与稳定性
+- 空页/末页行为
+禁止默认返回全量；禁止无上限 page size。
+输出：接口约定 + 改动点 + 我怎么翻两页验 3 步。」
+
+一页一页来，别一口吞。
+上一条 76/100 · 下一条 78/100 → Index
+</pre>
+    </section>
+
+    <section class="post" id="p078">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#078</span>
+          <h2>停止向AI许愿 · 78/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-078">复制全文</button>
+          <a class="btn ghost" href="posts/078.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-078" class="body">停止向AI许愿 · 78/100
+
+查询全表扫，AI 却建议「先加缓存」绕过根因。
+口令：Index（索引）
+
+场景：为查询预建索引，并说清写入成本与选型。
+例如：长任务可取消且无脏写。对比 Incident：可中断。默认无法停止——口令纠正。
+
+直接复制给 AI：
+「为查询______设计 Index：
+- 字段顺序与类型
+- 预期命中的查询
+- 写入/存储成本
+禁止无测量就乱加索引；禁止重复索引。
+先输出方案与 explain 预期，确认后再建。」
+
+路径先铺好，查询才不爬。
+上一条 77/100 · 下一条 79/100 → Cache
+</pre>
+    </section>
+
+    <section class="post" id="p079">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#079</span>
+          <h2>停止向AI许愿 · 79/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-079">复制全文</button>
+          <a class="btn ghost" href="posts/079.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-079" class="body">停止向AI许愿 · 79/100
+
+加了缓存更快，但脏数据挂好久——失效策略没写。
+口令：Cache（缓存）
+
+场景：用空间换时间，必须写清谁失效、何时失效。
+例如：合 PR 需人点头。对比 AC：人在环。默认 Agent 自动推——口令纠正。
+
+直接复制给 AI：
+「为______加 Cache：
+- 键设计
+- 失效策略（写穿/TTL/主动删）写死
+- 穿透/击穿怎么防（简述）
+禁止无限期缓存；禁止缓存权限相关敏感决策除非我批准。
+输出：策略卡 + 改动点 + 我怎么验命中与失效 3 步。」
+
+快可以，脏不行。
+上一条 78/100 · 下一条 80/100 → TTL
+</pre>
+    </section>
+
+    <section class="post" id="p080">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#080</span>
+          <h2>停止向AI许愿 · 80/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-080">复制全文</button>
+          <a class="btn ghost" href="posts/080.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-080" class="body">停止向AI许愿 · 80/100
+
+临时数据/缓存不过期，最后当永久真相用。
+口令：TTL（存活时间）
+
+场景：存活时间要写死，到期必须失效或重建。
+例如：缓存 TTL=10m，到期重建。对比 SSOT：临时数据不许变永久。默认不过期——口令纠正。
+
+直接复制给 AI：
+「为______设 TTL：
+- 时长与时钟来源
+- 到期行为（删除/懒失效）
+- 如何续期（若需要）
+禁止无 TTL 的「临时」存储；禁止用客户端时钟当唯一权威。
+输出：TTL 配置点 + 我怎么快进到期验 3 步。」
+
+到期就失效，临时别变永久。
+上一条 79/100 · 下一条 81/100 → N+1
+</pre>
+    </section>
+
+    <section class="post" id="p081">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#081</span>
+          <h2>停止向AI许愿 · 81/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-081">复制全文</button>
+          <a class="btn ghost" href="posts/081.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-081" class="body">停止向AI许愿 · 81/100
+
+列表 50 条，库被打 50+1 次——循环里查库。
+口令：N+1（查询放大）
+
+场景：查出 N+1 就合并或预加载，别在循环里打点。
+例如：50 条列表一次 in 查询。对比 Pagination：禁循环查库。默认 ORM 懒加载——口令纠正。
+
+直接复制给 AI：
+「排查并修复 N+1：______。
+先给出：当前查询次数证据（日志/计数）。
+再改为批量/预加载；禁止用缓存掩盖仍存在的 N+1。
+输出：修复前/后查询次数 + 改动点 + 我怎么用列表页验 3 步。」
+
+一次取齐，别循环敲库。
+上一条 80/100 · 下一条 82/100 → Hot path
+</pre>
+    </section>
+
+    <section class="post" id="p082">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#082</span>
+          <h2>停止向AI许愿 · 82/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-082">复制全文</button>
+          <a class="btn ghost" href="posts/082.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-082" class="body">停止向AI许愿 · 82/100
+
+优化冷门角落，最热那条路径照样慢。
+口令：Hot path（热路径）
+
+场景：最常走、最不能慢的路径优先。
+
+直接复制给 AI：
+「只优化 Hot path：______（用数据或日志证明它是热路径）。
+非目标：冷路径微优化、大重构。
+先展示证据，再最小改动；改完给前后对比指标。
+我怎么复现热路径验 3 步。」
+
+先救最常走的那条。
+上一条 81/100 · 下一条 83/100 → Bottleneck
+</pre>
+    </section>
+
+    <section class="post" id="p083">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#083</span>
+          <h2>停止向AI许愿 · 83/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-083">复制全文</button>
+          <a class="btn ghost" href="posts/083.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-083" class="body">停止向AI许愿 · 83/100
+
+感觉「到处都慢」，实际卡在一个环节。
+口令：Bottleneck（瓶颈）
+
+场景：找到真正卡住吞吐/延迟的那一环再动手。
+
+直接复制给 AI：
+「定位 Bottleneck：______。
+先给测量（耗时分解/队列长度/锁等待），指出 Top1 瓶颈。
+只允许修 Top1；禁止平均用力撒胡椒面。
+输出：证据 → 改动 → 我怎么对比前后 3 步。」
+
+找准卡点，一处用力。
+上一条 82/100 · 下一条 84/100 → P99
+</pre>
+    </section>
+
+    <section class="post" id="p084">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#084</span>
+          <h2>停止向AI许愿 · 84/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-084">复制全文</button>
+          <a class="btn ghost" href="posts/084.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-084" class="body">停止向AI许愿 · 84/100
+
+平均很快，但最慢那批用户骂声最大。
+口令：P99（长尾延迟）
+
+场景：看 P99/长尾，不只看平均值。
+例如：热点 key 本地缓存+单飞。对比 Cache：防击穿。默认人人打 DB——口令纠正。
+
+直接复制给 AI：
+「改善______的 P99：
+- 先报当前 P50/P95/P99（或如何测）
+- 针对长尾原因（排队/GC/慢查询/重试）下药
+禁止只报平均；禁止用砍功能冒充性能胜利除非我批准。
+输出：指标与改动 + 我怎么打负载看长尾 3 步。」
+
+平均值好看，长尾才要命。
+上一条 83/100 · 下一条 85/100 → Tracing
+</pre>
+    </section>
+
+    <section class="post" id="p085">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#085</span>
+          <h2>停止向AI许愿 · 85/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-085">复制全文</button>
+          <a class="btn ghost" href="posts/085.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-085" class="body">停止向AI许愿 · 85/100
+
+跨服务一慢，谁也不知道慢在哪一跳。
+口令：Tracing（链路追踪）
+
+场景：用链路追踪看请求怎么走，定位慢与错。
+例如：批量接口最多 100 条。对比 Pagination：硬边界。默认无限批——口令纠正。
+
+直接复制给 AI：
+「为______补 Tracing：
+- 关键跨服务跨度
+- trace/span id 如何传播
+- 错误如何标记
+禁止只打无关联的散装日志冒充追踪。
+输出：埋点位置 + 示例 trace 解读 + 我怎么发起一笔看全链 3 步。」
+
+串起来看，才找得到贼。
+上一条 84/100 · 下一条 86/100 → Metrics
+</pre>
+    </section>
+
+    <section class="post" id="p086">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#086</span>
+          <h2>停止向AI许愿 · 86/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-086">复制全文</button>
+          <a class="btn ghost" href="posts/086.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-086" class="body">停止向AI许愿 · 86/100
+
+「感觉挂了」——没有数字，只靠猜。
+口令：Metrics（指标）
+
+场景：用可查询的指标看健康，不靠体感。
+例如：超时 3s 当失败可重试。对比 Error contract：超时是错误态。默认无限等——口令纠正。
+
+直接复制给 AI：
+「为______定义 Metrics：
+- 黄金信号（延迟/流量/错误/饱和）相关项
+- 名称、标签、单位
+- 告警阈值草稿
+禁止只加日志不加可聚合指标；禁止指标爆炸无说明。
+输出：指标清单 + 埋点处 + 我怎么在面板看到 3 步。」
+
+有数，才有判断。
+上一条 85/100 · 下一条 87/100 → Authn
+</pre>
+    </section>
+
+    <section class="post" id="p087">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#087</span>
+          <h2>停止向AI许愿 · 87/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-087">复制全文</button>
+          <a class="btn ghost" href="posts/087.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-087" class="body">停止向AI许愿 · 87/100
+
+接口没问「你是谁」就办事——身份缺口。
+口令：Authn（认证）
+
+场景：认证：确认身份；未通过则拒绝。
+例如：熔断打开后快失败。对比 Incident：自我保护。默认死重试——口令纠正。
+
+直接复制给 AI：
+「为______补 Authn：
+- 凭证类型（session/token…）
+- 失败返回
+- 不在日志打印密钥
+禁止把认证当授权；本轮不做细粒度权限（那是 Authz）。
+输出：校验点 + 失败形态 + 我怎么用无凭证/坏凭证验 3 步。」
+
+先问你是谁，再谈下一步。
+上一条 86/100 · 下一条 88/100 → Authz
+</pre>
+    </section>
+
+    <section class="post" id="p088">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#088</span>
+          <h2>停止向AI许愿 · 88/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-088">复制全文</button>
+          <a class="btn ghost" href="posts/088.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-088" class="body">停止向AI许愿 · 88/100
+
+登了录就能干所有事——身份有了，权限没有。
+口令：Authz（授权）
+
+场景：授权：你能做什么；默认拒绝。
+例如：登录≠什么都能干；默认拒绝。对比 Authn：认证是你是谁；授权是你能做什么。默认有身份就放行——口令纠正。
+
+直接复制给 AI：
+「为______补 Authz：
+- 资源×动作矩阵
+- 默认 deny
+- 越权尝试的返回
+禁止只靠前端藏按钮；必须服务端强制。
+非目标：不重做 Authn。
+输出：矩阵 + 检查点 + 我怎么用低权限账号攻 3 步。」
+
+是谁之后，还要问能做什么。
+上一条 87/100 · 下一条 89/100 → E2E
+</pre>
+    </section>
+
+    <section class="post" id="p089">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#089</span>
+          <h2>停止向AI许愿 · 89/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-089">复制全文</button>
+          <a class="btn ghost" href="posts/089.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-089" class="body">停止向AI许愿 · 89/100
+
+单测全绿，用户入口到结果仍断——缺端到端。
+口令：E2E（端到端测试）
+
+场景：从用户入口跑到真实结果，才算闭环。
+例如：配置变更写审计日志。对比 SSOT：配置源唯一。默认改机器本地——口令纠正。
+
+直接复制给 AI：
+「补一条 E2E：______。
+- 从入口到可观察结果
+- 稳定夹具，不依赖人工点击外部网站
+- 失败信息可读
+禁止用大量单测冒充 E2E；本轮先 1 条金路径。
+输出：步骤 + 命令 + 我怎么本地跑 3 步。」
+
+入口到结果，一跑见分晓。
+上一条 88/100 · 下一条 90/100 → A11y
+</pre>
+    </section>
+
+    <section class="post" id="p090">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#090</span>
+          <h2>停止向AI许愿 · 90/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-090">复制全文</button>
+          <a class="btn ghost" href="posts/090.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-090" class="body">停止向AI许愿 · 90/100
+
+只靠鼠标+眼睛能用——键盘和读屏用户进不去。
+口令：A11y（可访问性）
+
+场景：残障/键盘/读屏也要能完成主流程。
+例如：文档与代码同 PR。对比 DoD：无文档不算完成。默认稍后补——口令纠正。
+
+直接复制给 AI：
+「给______做 A11y 最小集：
+- 键盘可达
+- 语义标签/名称
+- 焦点可见
+禁止只改颜色当完工；本轮先保主流程可完成。
+输出：改动点 + 我怎么只用键盘走通 3 步。」
+
+能用，不止一种方式。
+上一条 89/100 · 下一条 91/100 → Incident
+</pre>
+    </section>
+
+    <section class="post" id="p091">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#091</span>
+          <h2>停止向AI许愿 · 91/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-091">复制全文</button>
+          <a class="btn ghost" href="posts/091.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-091" class="body">停止向AI许愿 · 91/100
+
+线上炸了还在「顺便重构」——缺止血口令。
+口令：Incident（故障）
+
+场景：出事时：定界 → 止血 → 复盘，按序执行。
+例如：先回滚/关旗止血，再查根因。对比 Repro：故障中禁止顺便重构。默认边炸边重构——口令纠正。
+
+直接复制给 AI：
+「按 Incident 流程处理______：
+1）定界：影响面/开始时间
+2）止血：回滚/关旗/限流（选最小）
+3）证据保留；复盘另开，不在止血时大改
+禁止故障中重构；先给止血计划我确认。」
+
+先止血，再复盘。
+上一条 90/100 · 下一条 92/100 → Async
+</pre>
+    </section>
+
+    <section class="post" id="p092">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#092</span>
+          <h2>停止向AI许愿 · 92/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-092">复制全文</button>
+          <a class="btn ghost" href="posts/092.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-092" class="body">停止向AI许愿 · 92/100
+
+同步死等把线程拖垮；异步又没说清何时算完成。
+口令：Async（异步）
+
+场景：别阻塞等待；回调/完成条件/失败要写清。
+例如：postmortem 五行影响/原因/动作/后续/负责人。对比 Incident：事后学习。默认沉默——口令纠正。
+
+直接复制给 AI：
+「把______改为 Async：
+- 触发方式与完成条件
+- 成功/失败通知
+- 超时与取消
+禁止「fire and forget」无追踪；禁止假装同步 API。
+输出：时序说明 + 改动点 + 我怎么确认完成/失败 3 步。」
+
+不阻塞，但要有下文。
+上一条 91/100 · 下一条 93/100 → Idempotency key
+</pre>
+    </section>
+
+    <section class="post" id="p093">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#093</span>
+          <h2>停止向AI许愿 · 93/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-093">复制全文</button>
+          <a class="btn ghost" href="posts/093.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-093" class="body">停止向AI许愿 · 93/100
+
+网络重试导致重复下单——服务端认不出「同一笔」。
+口令：Idempotency key（幂等键）
+
+场景：客户端带唯一键，服务端按键去重。
+例如：值班表+升级路径。对比 Checklist：运转也要清单。默认谁看到谁修——口令纠正。
+
+直接复制给 AI：
+「为______加 Idempotency key：
+- 键从哪来、存多久
+- 相同键重复请求：返回首次结果
+- 键冲突（同键不同体）怎么处理
+禁止只靠「随机碰运气」；必须服务端持久化去重。
+输出：协议 + 存储 + 我怎么同键重放验 3 步。」
+
+同一把钥匙，只开一次门。
+上一条 92/100 · 下一条 94/100 → Optimistic lock
+</pre>
+    </section>
+
+    <section class="post" id="p094">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#094</span>
+          <h2>停止向AI许愿 · 94/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-094">复制全文</button>
+          <a class="btn ghost" href="posts/094.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-094" class="body">停止向AI许愿 · 94/100
+
+两人同改一行，后写覆盖前写——更新丢失。
+口令：Optimistic lock（乐观锁）
+
+场景：用版本号/ETag 防丢更新。
+例如：每日备份+每季恢复演练。对比 Migration：恢复也是路径。默认只备份不练——口令纠正。
+
+直接复制给 AI：
+「为______加 Optimistic lock：
+- 版本字段/ETag
+- 冲突时返回（可重试提示）
+禁止静默覆盖；本轮不做悲观长锁除非我要求。
+输出：读写流 + 冲突形态 + 我怎么双开冲突验 3 步。」
+
+先比版本，再许写入。
+上一条 93/100 · 下一条 95/100 → Compatibility window
+</pre>
+    </section>
+
+    <section class="post" id="p095">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#095</span>
+          <h2>停止向AI许愿 · 95/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-095">复制全文</button>
+          <a class="btn ghost" href="posts/095.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-095" class="body">停止向AI许愿 · 95/100
+
+新旧协议只重叠一天，发布窗口变成悬崖。
+口令：Compatibility window（兼容窗口）
+
+场景：新旧并行多久要显式规定，重叠期内双可。
+例如：删用户数据 30 天内可完成。对比 Privacy：可删除是义务。默认做不到删——口令纠正。
+
+直接复制给 AI：
+「为______设 Compatibility window：
+- 起止版本/日期
+- 窗口内新旧行为
+- 窗口结束后只保留新
+禁止无窗口直接切；禁止无限双轨不设终点。
+输出：时间表 + 适配点 + 我怎么在窗口内用旧客户端验 3 步。」
+
+并行有窗，关窗有日。
+上一条 94/100 · 下一条 96/100 → Coupling
+</pre>
+    </section>
+
+    <section class="post" id="p096">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#096</span>
+          <h2>停止向AI许愿 · 96/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-096">复制全文</button>
+          <a class="btn ghost" href="posts/096.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-096" class="body">停止向AI许愿 · 96/100
+
+改 A 必炸 B——模块绑死，下令时没说清允许依赖谁。
+口令：Coupling（耦合）
+
+场景：降低不必要耦合；依赖方向写死。
+例如：第三方 SDK 包适配器。对比 Interface：便于替换。默认深绑 SDK——口令纠正。
+
+直接复制给 AI：
+「处理 Coupling：______。
+- 画出当前依赖（谁 import 谁）
+- 允许的依赖方向
+- 本轮只切断 1 处最痛耦合，禁止大爆炸重写
+输出：依赖图（文字）+ 最小改动 + 我怎么确认方向 3 步。」
+
+谁能依赖谁，先画清楚。
+上一条 95/100 · 下一条 97/100 → Cohesion
+</pre>
+    </section>
+
+    <section class="post" id="p097">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#097</span>
+          <h2>停止向AI许愿 · 97/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-097">复制全文</button>
+          <a class="btn ghost" href="posts/097.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-097" class="body">停止向AI许愿 · 97/100
+
+一个模块又下单又发邮件又算营销——啥都管。
+口令：Cohesion（内聚）
+
+场景：一个模块应围绕同一件事；散装职责要拆。
+例如：AI 生成代码必须过测试才合。对比 DoD：不豁免门禁。默认「AI 写的先合」——口令纠正。
+
+直接复制给 AI：
+「提升______的 Cohesion：
+- 列出当前职责清单
+- 标出不属于本模块的职责
+- 本轮只挪出 1 个异质职责（最小改动）
+禁止借机大重构改名全家桶。
+输出：职责表 + 挪动点 + 我怎么验行为不变 3 步。」
+
+一事一处，模块才紧。
+上一条 96/100 · 下一条 98/100 → Blender
+</pre>
+    </section>
+
+    <section class="post" id="p098">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#098</span>
+          <h2>停止向AI许愿 · 98/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-098">复制全文</button>
+          <a class="btn ghost" href="posts/098.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-098" class="body">停止向AI许愿 · 98/100
+
+要 AI 帮你用 Blender，它却只会空谈「氛围」？
+工具口令：Blender（三维制作）
+
+场景：出模型/渲染，需要可执行步骤而不是形容词。
+例如：用 Blender 导出 glTF 的逐步操作，不要「更有氛围」。对比 Godot：工具口令要可执行步骤。默认形容词空谈——口令纠正。
+
+直接复制给 AI：
+「用 Blender 做______。
+先输出步骤清单（≤8步），每步只做一个可逆操作。
+先给最低可渲染占位结果，再细化。
+未经确认不要加复杂绑定。」
+
+步骤 &gt; 感觉。
+上一条 97/100 · 下一条 99/100 → Godot
+</pre>
+    </section>
+
+    <section class="post" id="p099">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#099</span>
+          <h2>停止向AI许愿 · 99/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-099">复制全文</button>
+          <a class="btn ghost" href="posts/099.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-099" class="body">停止向AI许愿 · 99/100
+
+要做小游戏原型，AI 一上来就谈画面管线？
+工具口令：Godot（游戏引擎）
+
+场景：先要能玩，再谈好看。
+例如：先出可玩的 2D 原型场景，再谈光影管线。对比 MVP：先能玩。默认一上来渲染——口令纠正。
+
+直接复制给 AI：
+「用 Godot 做最小可玩原型：______。
+先 Scaffold：场景树、占位、能跑主场景。
+先不要美术和联网。
+验收：能启动并完成一次核心操作。」
+
+先可玩，再好看。
+上一条 98/100 · 下一条 100/100 → Figma
+</pre>
+    </section>
+
+    <section class="post" id="p100">
+      <header class="post-head">
+        <div class="post-meta">
+          <span class="badge">#100</span>
+          <h2>停止向AI许愿 · 100/100</h2>
+        </div>
+        <div class="post-actions">
+          <button type="button" class="btn copy" data-target="body-100">复制全文</button>
+          <a class="btn ghost" href="posts/100.txt" download>下载 .txt</a>
+        </div>
+      </header>
+      <pre id="body-100" class="body">停止向AI许愿 · 100/100
+
+要设计稿，AI 先画插画不画结构？
+工具口令：Figma（界面设计）
+
+场景：开发要的是可落地的框和标注。
+例如：先出线框+间距标注，再视觉插画。对比 Spec：结构先于装饰。默认先画好看——口令纠正。
+
+直接复制给 AI：
+「在 Figma 做______。
+先信息结构（框+标注），再视觉。
+输出：页面清单、关键交互、间距/字号标注。
+先别做插画装饰。」
+
+结构先于装饰。
+上一条 99/100 · 下一条 完结
+</pre>
+    </section>
+  </main>
+
+  <footer>
+    series-100 最新盘稿 · 仅供内部审阅与人工发布 ·
+    <a href="https://chener.github.io/pxml-akit-site/series-100/">canonical</a>
+  </footer>
+
+  <script>
+    document.querySelectorAll("button.copy").forEach(function (btn) {
+      btn.addEventListener("click", async function () {
+        var id = btn.getAttribute("data-target");
+        var el = document.getElementById(id);
+        if (!el) return;
+        var text = el.textContent;
+        try {
+          await navigator.clipboard.writeText(text);
+          var old = btn.textContent;
+          btn.textContent = "已复制";
+          btn.classList.add("ok");
+          setTimeout(function () {
+            btn.textContent = old;
+            btn.classList.remove("ok");
+          }, 1400);
+        } catch (e) {
+          var r = document.createRange();
+          r.selectNodeContents(el);
+          var s = window.getSelection();
+          s.removeAllRanges();
+          s.addRange(r);
+          btn.textContent = "请 Ctrl/Cmd+C";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
