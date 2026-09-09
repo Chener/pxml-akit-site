@@ -1,0 +1,16 @@
+停止向AI许愿 · 6/100
+
+输入输出没锁死，实现怎么换都像对。
+口令：Contract（契约）——先锁成功/失败长什么样。
+
+场景：创建订单，成功失败各返回一坨不一样的东西。
+例如成功 JSON：`{"ok":true,"orderId":"…","totalCents":0}`；失败：`{"ok":false,"error":"OUT_OF_STOCK"}`。对比 Spec：契约偏机器形状；规格偏人话对错。默认先写代码——口令纠正。
+
+直接复制给 AI：
+「Contract 先锁（禁止先写代码）：
+成功：{ "ok": true, "orderId": "string", "totalCents": 0 }
+失败：{ "ok": false, "error": "OUT_OF_STOCK"|"INVALID_COUPON"|"UNAUTHORIZED" }
+禁止新增字段；确认后再实现。」
+
+有 JSON，才叫契约。
+上一条 5/100 · 下一条 7/100 → Spec

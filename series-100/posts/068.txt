@@ -1,0 +1,21 @@
+停止向AI许愿 · 68/100
+
+你要的是补丁，它给你整仓重写。
+口令：Patch（补丁）——只改指定文件/函数，列表外禁止动刀。
+
+场景：只要改 validateEmail()，结果 lint 规则和相邻模块也被「优化」。
+例如：只准改 validateEmail.ts。对比 Minimal change/Boundary：补丁是名单内最小刀。默认顺手半仓——口令纠正。
+
+直接复制给 AI：
+「只打 Patch，限定：
+- 文件：src/auth/validateEmail.ts
+- 函数：validateEmail
+列表外禁止修改（含格式化与「顺手」）。
+先复述将改符号：validateEmail 内的正则与返回码；确认后一次性最小改动。
+改完：unified diff 说明 + 验收 3 步。」
+
+邻口令：Patch ≠ Minimal change——最小改动是目标切口哲学；Patch 是文件/符号级硬边界。
+默认 harness 常顺手整理周边；本口令纠正「补丁变整仓」。
+
+补丁要小，刀口要准。
+上一条 67/100 · 下一条 69/100 → Behavior-preserving

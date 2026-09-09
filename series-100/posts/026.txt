@@ -1,0 +1,14 @@
+停止向AI许愿 · 26/100
+
+失败时有时抛错、有时返回空、有时中文一句话——调用方猜。
+口令：Error contract（错误约定）
+
+场景：库存不足，有时 500，有时 `{error:"没了"}`。
+例如固定：`{ ok:false, error:"OUT_OF_STOCK"|"UNAUTHORIZED", retryable:false }`。对比 Contract：总契约含成功态；Error contract 专锁失败态。默认自由发挥错误——口令纠正。
+
+直接复制给 AI：
+「先写 Error contract：错误码枚举 / 是否可重试 / 用户可见文案是否允许自由句（默认否）。
+给 2 个失败 JSON 例。确认前不要改业务；确认后所有失败走约定。」
+
+失败也是接口，不是情绪。
+上一条 25/100 · 下一条 27/100 → Side effect

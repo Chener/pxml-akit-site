@@ -1,0 +1,23 @@
+停止向AI许愿 · 65/100
+
+主逻辑埋在三层 if-else 里，合法路径都看不清。
+口令：Guard clause（卫语句）——先挡非法，主路径走直线。
+
+场景：创建用户函数里嵌套校验邮箱、角色、配额，读到第十行还没进正题。
+例如：非法邮箱直接 return 错误，主路径直线创建。对比 SoC：卫语句先挡非法。默认深嵌套——口令纠正。
+
+直接复制给 AI：
+「重构 createUser 用 Guard clause，行为不变：
+例：
+if (!email) return 400;
+if (!email.includes('@')) return 400;
+if (await exists(email)) return 409;
+// 以下直线：建用户→写默认设置→返回
+禁止改对外错误码/文案；禁止借机加功能。
+输出：守卫列表 + diff 摘要 + 非法输入验收 3 步。」
+
+邻口令：Guard clause ≠ Error contract——错误约定规定失败长什么样；卫语句是代码结构手法。
+默认 harness 常继续堆嵌套 if；本口令纠正「主路被卫兵淹没」。
+
+先挡脏活，主路走直。
+上一条 64/100 · 下一条 66/100 → Dead code

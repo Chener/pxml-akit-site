@@ -1,0 +1,20 @@
+停止向AI许愿 · 70/100
+
+任务没锁文件，AI 改着改着就出圈。
+口令：File boundary（文件边界）——先锁定目录/文件列表，列表外只读不写。
+
+场景：改搜索组件，登录与订单目录也被写入。
+例如：只写 src/search/**。对比 Boundary：文件边界是路径白名单。默认改着出圈——口令纠正。
+
+直接复制给 AI：
+「File boundary 锁死，只允许改：
+- src/search/**
+- tests/search/**
+列表外：读可以，写一次算失败（例：禁止动 src/auth/）。
+先列计划：将改文件 + 每步验收；确认后再改。」
+
+邻口令：File boundary ≠ Boundary——Boundary 可锁模块/职责；File boundary 专锁路径列表。
+默认 harness 按「相关就改」扩写；本口令纠正「无路径白名单就开工」。
+
+先锁文件柜，再给钥匙。
+上一条 69/100 · 下一条 71/100 → Checklist

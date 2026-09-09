@@ -1,0 +1,20 @@
+停止向AI许愿 · 73/100
+
+AI 说对了，却没有标准答案可对——你只能干瞪眼。
+口令：Ground truth（对照真相）——用已有测试或金标样例当唯一对照。
+
+场景：改价格计算，AI 说「对了」；你没有 fixtures/prices.golden.json 可 diff。
+例如：prices.golden.json 逐行对照。对比 AC：有金标才验得了。默认靠嘴说对——口令纠正。
+
+直接复制给 AI：
+「以 Ground truth 为准：tests/fixtures/prices.golden.json。
+例金标行：{"sku":"A1","qty":2,"coupon":"SAVE10","expect":18.00}
+实现必须对齐金标；冲突时改实现不改金标，除非我批准。
+禁止手改金标「让测试变绿」。
+输出：对齐点 + 失败差分看法 + 跑金标验收 3 步。」
+
+邻口令：Ground truth ≠ Spec——Spec 写期望行为；Ground truth 是可跑的对照物。
+默认 harness 常自造「看起来对」的例子；本口令纠正「无金标自嗨」。
+
+有金标，才有对错。
+上一条 72/100 · 下一条 74/100 → Hand-off
